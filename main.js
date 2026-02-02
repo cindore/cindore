@@ -1,5 +1,5 @@
 // Cindore - Premium Novel Platform
-// Web2 & Web3 Integration
+// Web2 & Web3 Integration with Interactive Features
 
 // ==================== Data ====================
 const novelsData = [
@@ -236,6 +236,8 @@ let walletAddress = '';
 let currentTrack = 0;
 let isPlaying = false;
 let selectedPlan = null;
+let bgMusicPlaying = false;
+let bgAudio = null;
 
 const planPrices = {
     basic: { web2: '9,900원/월', web3: '0.005 ETH/월' },
@@ -255,7 +257,213 @@ document.addEventListener('DOMContentLoaded', () => {
     initMusicPlayer();
     initFilterButtons();
     initLoginTabs();
+    initCustomCursor();
+    initParticles();
+    initMobileMenu();
+    initBackgroundMusic();
+    initScrollAnimations();
+    initTiltEffect();
 });
+
+// ==================== Custom Cursor ====================
+function initCustomCursor() {
+    const cursor = document.querySelector('.cursor');
+    const follower = document.querySelector('.cursor-follower');
+
+    if (!cursor || !follower) return;
+
+    // Check if touch device
+    if ('ontouchstart' in window) {
+        cursor.style.display = 'none';
+        follower.style.display = 'none';
+        return;
+    }
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    let followerX = 0, followerY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Smooth cursor animation
+    function animateCursor() {
+        // Cursor follows immediately
+        cursorX += (mouseX - cursorX) * 0.2;
+        cursorY += (mouseY - cursorY) * 0.2;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+
+        // Follower has delay
+        followerX += (mouseX - followerX) * 0.1;
+        followerY += (mouseY - followerY) * 0.1;
+        follower.style.left = followerX + 'px';
+        follower.style.top = followerY + 'px';
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Cursor effects on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .novel-card, .feature-card, .plan-card, .nft-card, .track-item, .animation-item');
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('active');
+            follower.classList.add('active');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('active');
+            follower.classList.remove('active');
+        });
+    });
+
+    // Mouse trail effect
+    document.addEventListener('mousemove', createTrail);
+}
+
+let trailCount = 0;
+function createTrail(e) {
+    trailCount++;
+    if (trailCount % 3 !== 0) return; // Throttle
+
+    const trail = document.createElement('div');
+    trail.className = 'trail';
+    trail.style.left = e.clientX + 'px';
+    trail.style.top = e.clientY + 'px';
+    document.body.appendChild(trail);
+
+    setTimeout(() => {
+        trail.style.opacity = '0';
+        setTimeout(() => trail.remove(), 500);
+    }, 100);
+}
+
+// ==================== Particles Background ====================
+function initParticles() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+
+    const colors = ['#6c5ce7', '#a29bfe', '#fd79a8', '#00cec9'];
+    const particleCount = window.innerWidth < 768 ? 20 : 50;
+
+    for (let i = 0; i < particleCount; i++) {
+        createParticle(container, colors);
+    }
+}
+
+function createParticle(container, colors) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+    particle.style.animationDelay = Math.random() * 10 + 's';
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.width = (Math.random() * 4 + 2) + 'px';
+    particle.style.height = particle.style.width;
+    container.appendChild(particle);
+}
+
+// ==================== Mobile Menu ====================
+function initMobileMenu() {
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    if (menuBtn) {
+        menuBtn.addEventListener('click', toggleMobileMenu);
+    }
+}
+
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+}
+
+function closeMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.remove('active');
+}
+
+// ==================== Background Music ====================
+function initBackgroundMusic() {
+    // Create audio context for orchestra music
+    bgAudio = new Audio();
+    // Using a royalty-free orchestra sample URL
+    bgAudio.src = 'https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3';
+    bgAudio.loop = true;
+    bgAudio.volume = 0.3;
+
+    // Preload
+    bgAudio.load();
+}
+
+function toggleBgMusic() {
+    const control = document.getElementById('bgMusicControl');
+
+    if (bgMusicPlaying) {
+        bgAudio.pause();
+        control.classList.add('paused');
+        bgMusicPlaying = false;
+    } else {
+        bgAudio.play().then(() => {
+            control.classList.remove('paused');
+            bgMusicPlaying = true;
+        }).catch(err => {
+            console.log('Audio autoplay blocked:', err);
+            showToast('클릭하여 음악을 재생하세요');
+        });
+    }
+}
+
+// ==================== Scroll Animations ====================
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for scroll animation
+    document.querySelectorAll('.novel-card, .feature-card, .plan-card, .nft-card, .animation-item, .track-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+}
+
+// ==================== Tilt Effect ====================
+function initTiltEffect() {
+    const cards = document.querySelectorAll('.card-float, .novel-card, .nft-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            if (window.innerWidth < 768) return;
+
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+}
 
 // ==================== Navigation ====================
 function initNavigation() {
@@ -265,6 +473,7 @@ function initNavigation() {
             e.preventDefault();
             const section = link.dataset.section;
             showSection(section);
+            closeMobileMenu();
         });
     });
 
@@ -304,7 +513,10 @@ function showSection(sectionId) {
     });
 
     currentSection = sectionId;
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Re-init scroll animations for new section
+    setTimeout(initScrollAnimations, 100);
 }
 
 // ==================== Modals ====================
@@ -384,8 +596,8 @@ function renderNovels(filter = 'all') {
         ? novelsData
         : novelsData.filter(novel => novel.genre === filter);
 
-    grid.innerHTML = filteredNovels.map(novel => `
-        <div class="novel-card" onclick="openNovel(${novel.id})">
+    grid.innerHTML = filteredNovels.map((novel, index) => `
+        <div class="novel-card" onclick="openNovel(${novel.id})" style="animation-delay: ${index * 0.1}s">
             <div class="novel-cover" style="background: ${novel.gradient}">
                 <span class="novel-badge">${novel.status}</span>
             </div>
@@ -404,6 +616,9 @@ function renderNovels(filter = 'all') {
             </div>
         </div>
     `).join('');
+
+    // Re-init tilt effect for new cards
+    setTimeout(initTiltEffect, 100);
 }
 
 function initFilterButtons() {
@@ -443,8 +658,8 @@ function generateSampleContent(novel) {
 // ==================== Animations ====================
 function renderAnimations() {
     const list = document.getElementById('animationList');
-    list.innerHTML = animationsData.map(anim => `
-        <div class="animation-item" onclick="playAnimation(${anim.id})">
+    list.innerHTML = animationsData.map((anim, index) => `
+        <div class="animation-item" onclick="playAnimation(${anim.id})" style="animation-delay: ${index * 0.1}s">
             <div class="animation-thumb" style="background: ${anim.gradient}"></div>
             <div class="animation-details">
                 <h4>${anim.title}</h4>
@@ -463,7 +678,7 @@ function playAnimation(id) {
 function renderPlaylist() {
     const playlist = document.getElementById('playlist');
     playlist.innerHTML = musicData.map((track, index) => `
-        <div class="track-item ${index === currentTrack ? 'active' : ''}" onclick="selectTrack(${index})">
+        <div class="track-item ${index === currentTrack ? 'active' : ''}" onclick="selectTrack(${index})" style="animation-delay: ${index * 0.05}s">
             <span class="track-number">${index + 1}</span>
             <div class="track-thumb" style="background: ${track.gradient}"></div>
             <div class="track-info">
@@ -493,10 +708,15 @@ function initMusicPlayer() {
 function togglePlay() {
     isPlaying = !isPlaying;
     const playBtn = document.getElementById('playBtn');
+    const albumArt = document.getElementById('albumArt');
+
     playBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
 
     if (isPlaying) {
+        albumArt.classList.add('playing');
         simulatePlayback();
+    } else {
+        albumArt.classList.remove('playing');
     }
 }
 
@@ -568,8 +788,8 @@ function updatePlayerDisplay() {
 // ==================== NFTs ====================
 function renderNFTs() {
     const grid = document.getElementById('nftGrid');
-    grid.innerHTML = nftData.map(nft => `
-        <div class="nft-card" onclick="viewNFT(${nft.id})">
+    grid.innerHTML = nftData.map((nft, index) => `
+        <div class="nft-card" onclick="viewNFT(${nft.id})" style="animation-delay: ${index * 0.1}s">
             <div class="nft-image" style="background: ${nft.gradient}">
                 <span class="nft-rarity ${nft.rarity}">${nft.rarity.toUpperCase()}</span>
             </div>
@@ -715,3 +935,5 @@ window.openNovel = openNovel;
 window.playAnimation = playAnimation;
 window.selectTrack = selectTrack;
 window.viewNFT = viewNFT;
+window.toggleBgMusic = toggleBgMusic;
+window.closeMobileMenu = closeMobileMenu;

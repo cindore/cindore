@@ -9,6 +9,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Background Music Control -->
+    <div class="music-control paused" id="bgMusicControl" onclick="toggleBgMusic()">
+        <div class="music-visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <span>Orchestra</span>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="nav-link" data-section="home" onclick="closeMobileMenu()">홈</a>
+        <a href="#novels" class="nav-link" data-section="novels" onclick="closeMobileMenu()">소설</a>
+        <a href="#animation" class="nav-link" data-section="animation" onclick="closeMobileMenu()">애니메이션</a>
+        <a href="#music" class="nav-link" data-section="music" onclick="closeMobileMenu()">음악</a>
+        <a href="#subscription" class="nav-link" data-section="subscription" onclick="closeMobileMenu()">구독</a>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">

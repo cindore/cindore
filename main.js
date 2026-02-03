@@ -297,16 +297,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ==================== Hover Effects ====================
 function initHoverEffects() {
-    // Smooth scale on cards
-    const cards = document.querySelectorAll('.novel-card, .feature-card, .plan-card, .nft-card, .track-item, .animation-item');
+    // Magnetic buttons - buttons slightly follow mouse
+    const magneticBtns = document.querySelectorAll('.btn-primary, .btn-secondary, .play-button-large');
 
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', (e) => {
-            card.style.transform = 'translateY(-8px) scale(1.02)';
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
         });
 
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+        });
+    });
+
+    // Link underline animation
+    const links = document.querySelectorAll('.nav-link, .footer-link');
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            link.style.setProperty('--underline-width', '100%');
+        });
+        link.addEventListener('mouseleave', () => {
+            link.style.setProperty('--underline-width', '0%');
         });
     });
 

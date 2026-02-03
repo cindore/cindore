@@ -1033,6 +1033,21 @@ function updateWalletUI() {
     }
 }
 
+// ==================== YouTube Video Player ====================
+function playYouTubeVideo() {
+    const thumbnail = document.getElementById('videoThumbnail');
+    const playOverlay = document.querySelector('.play-overlay');
+    const videoContainer = document.getElementById('videoContainer');
+    const youtubePlayer = document.getElementById('youtubePlayer');
+
+    if (thumbnail) thumbnail.style.display = 'none';
+    if (playOverlay) playOverlay.style.display = 'none';
+    if (videoContainer) {
+        videoContainer.style.display = 'block';
+        youtubePlayer.src = 'https://www.youtube.com/embed/nHPXmV8SZTw?autoplay=1&rel=0&modestbranding=1';
+    }
+}
+
 // ==================== Toast Notifications ====================
 function showToast(message) {
     const toast = document.getElementById('toast');
@@ -1061,3 +1076,4 @@ window.selectTrack = selectTrack;
 window.viewNFT = viewNFT;
 window.toggleBgMusic = toggleBgMusic;
 window.closeMobileMenu = closeMobileMenu;
+window.playYouTubeVideo = playYouTubeVideo;

@@ -191,14 +191,27 @@
 
             <div class="animation-featured">
                 <div class="video-player">
-                    <div class="video-container" id="videoPlayer">
-                        <iframe
-                            id="youtubePlayer"
-                            src="https://www.youtube.com/embed/nHPXmV8SZTw?rel=0&modestbranding=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
+                    <div class="video-wrapper" id="videoWrapper">
+                        <img
+                            src="https://img.youtube.com/vi/nHPXmV8SZTw/maxresdefault.jpg"
+                            alt="LOVER (2024) Thumbnail"
+                            class="video-thumbnail"
+                            id="videoThumbnail"
+                            onclick="playYouTubeVideo()">
+                        <div class="play-overlay" onclick="playYouTubeVideo()">
+                            <div class="play-button-large">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-container" id="videoContainer" style="display: none;">
+                            <iframe
+                                id="youtubePlayer"
+                                src=""
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
                     <div class="video-title-bar">
                         <span class="video-badge">NEW</span>

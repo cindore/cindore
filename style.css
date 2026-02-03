@@ -6,19 +6,19 @@
 }
 
 :root {
-    /* Blue Orchid + French Contemporary Art Palette */
+    /* Blue Orchid + Silver - Cool Modern Palette */
     --primary: #7eb8da;           /* Soft sky blue - 푸른 난초 */
     --primary-dark: #5a9bc4;      /* Deeper orchid blue */
-    --secondary: #c9d4dc;         /* Silver platinum */
-    --accent: #c9a962;            /* Elegant gold */
-    --accent-light: #e8d5a3;      /* Soft champagne gold */
+    --secondary: #d1d5db;         /* Pure silver */
+    --accent: #b8c5d0;            /* Cool silver blue */
+    --accent-light: #e2e8f0;      /* Light silver */
     --dark: #0c1015;              /* Deep blue-black */
     --dark-light: #151c24;        /* Midnight blue */
     --dark-lighter: #1e2832;      /* Slate blue */
     --text: #f8f9fa;              /* Clean white */
     --text-muted: #9eaab8;        /* Silver gray */
-    --gradient: linear-gradient(135deg, #7eb8da 0%, #a8cce0 40%, #c9a962 100%);
-    --gradient-accent: linear-gradient(135deg, #c9d4dc 0%, #e8d5a3 100%);
+    --gradient: linear-gradient(135deg, #7eb8da 0%, #a8cce0 50%, #d1d5db 100%);
+    --gradient-accent: linear-gradient(135deg, #b8c5d0 0%, #e2e8f0 100%);
     --gradient-orchid: linear-gradient(135deg, #5a9bc4 0%, #7eb8da 50%, #a8cce0 100%);
     --card-bg: rgba(126, 184, 218, 0.03);
     --border: rgba(201, 212, 220, 0.12);
@@ -41,7 +41,7 @@ body {
     position: fixed;
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle, rgba(126, 184, 218, 0.1) 0%, rgba(201, 169, 98, 0.05) 40%, transparent 60%);
+    background: radial-gradient(circle, rgba(126, 184, 218, 0.1) 0%, rgba(209, 213, 219, 0.06) 40%, transparent 60%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 1;
@@ -56,7 +56,7 @@ body {
     width: 20px;
     height: 20px;
     border: 2px solid rgba(126, 184, 218, 0.5);
-    background: radial-gradient(circle, rgba(201, 169, 98, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(209, 213, 219, 0.15) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;

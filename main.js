@@ -150,10 +150,11 @@ const animationsData = [
 const musicData = [
     {
         id: 1,
-        title: 'Winter Strawberry Life',
-        artist: '로사멜시(Rosa Melsy) OST',
-        duration: '4:13',
-        gradient: 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)',
+        title: 'Winter Strawberry Life - Piano Solo',
+        artist: '로사멜시(Rosa Melsy) OST • 2025 • 3:24',
+        duration: '3:24',
+        gradient: 'linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%)',
+        coverImage: 'https://i.scdn.co/image/ab67616d0000b273a048415f5094ab4bffc31658',
         spotifyId: '3phDz67JfTXoNwTwRPT5UX',
         isNew: true
     },
@@ -735,7 +736,7 @@ function renderPlaylist() {
     playlist.innerHTML = musicData.map((track, index) => `
         <div class="track-item ${index === currentTrack ? 'active' : ''} ${track.isNew ? 'new-track' : ''}" onclick="selectTrack(${index})" style="animation-delay: ${index * 0.05}s">
             <span class="track-number">${index + 1}</span>
-            <div class="track-thumb" style="background: ${track.gradient}">
+            <div class="track-thumb" style="${track.coverImage ? `background: url('${track.coverImage}') center/cover no-repeat` : `background: ${track.gradient}`}">
                 ${track.isNew ? '<span class="track-badge">NEW</span>' : ''}
             </div>
             <div class="track-info">
@@ -888,8 +889,15 @@ function updatePlayerDisplay() {
     const track = musicData[currentTrack];
     document.getElementById('trackTitle').textContent = track.title;
     document.getElementById('trackArtist').textContent = track.artist;
-    document.getElementById('albumArt').style.background = track.gradient;
     document.getElementById('totalTime').textContent = track.duration;
+
+    // 앨범 아트 설정 (이미지 또는 그라디언트)
+    const albumArt = document.getElementById('albumArt');
+    if (track.coverImage) {
+        albumArt.style.background = `url('${track.coverImage}') center/cover no-repeat`;
+    } else {
+        albumArt.style.background = track.gradient;
+    }
 
     // Spotify 임베드 업데이트
     const spotifyEmbed = document.getElementById('spotifyEmbed');

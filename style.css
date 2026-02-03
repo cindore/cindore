@@ -989,22 +989,22 @@ body {
     position: relative;
     min-height: 100vh;
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .animation-section.active {
     padding: 0;
 }
 
-/* Compact Header - 5% of viewport */
+/* Compact Header */
 .animation-compact-header {
-    height: 5vh;
-    min-height: 30px;
-    max-height: 40px;
+    position: relative;
+    z-index: 5;
+    padding: 20px 0 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
 }
 
 .animation-compact-header .header-label {
@@ -1015,14 +1015,16 @@ body {
     font-weight: 500;
 }
 
-/* Main Video Area - 60% of viewport */
+/* Main Video Area */
 .animation-main {
-    height: 65vh;
+    position: relative;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding-top: 10px;
+    padding: 10px 0 50px;
+    margin-bottom: 20px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .video-player {
@@ -1032,6 +1034,7 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
+    z-index: 10;
 }
 
 /* Cinema screen glow effect */
@@ -1177,9 +1180,15 @@ body {
 
 /* Animation List Preview - 30% of viewport */
 .animation-list-preview {
+    position: relative;
+    z-index: 1;
     height: 30vh;
     padding: 0 7.5%;
+    padding-top: 30px;
+    margin-top: 20px;
     overflow: hidden;
+    background: linear-gradient(180deg, rgba(10, 10, 15, 0.95) 0%, var(--dark) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .list-preview-header {

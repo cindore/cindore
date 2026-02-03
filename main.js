@@ -401,8 +401,8 @@ function closeMobileMenu() {
 function initBackgroundMusic() {
     // Create audio context for orchestra music
     bgAudio = new Audio();
-    // Winter Strawberry Life - Orchestra ver.
-    bgAudio.src = '/Winter Strawberry Life_orchestra ver..wav';
+    // Royalty-free orchestra music
+    bgAudio.src = 'https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3';
     bgAudio.loop = true;
     bgAudio.volume = 0.3;
 

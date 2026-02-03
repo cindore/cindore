@@ -151,7 +151,7 @@ const musicData = [
     {
         id: 1,
         title: 'Winter Strawberry Life',
-        artist: 'LOVER (2024) OST',
+        artist: '로사멜시(Rosa Melsy) OST',
         duration: '3:30',
         gradient: 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)',
         audioSrc: '/Winter Strawberry Life_orchestra ver..wav',
@@ -159,55 +159,48 @@ const musicData = [
     },
     {
         id: 2,
-        title: 'Moonlight Blade',
-        artist: '달빛 아래 검의 노래 OST',
-        duration: '3:45',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-    },
-    {
-        id: 3,
         title: 'Return of the Hero',
         artist: '회귀자의 세계정복 OST',
         duration: '4:12',
         gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
     },
     {
-        id: 4,
+        id: 3,
         title: 'Starlight Dreams',
         artist: '별이 된 소녀 OST',
         duration: '3:28',
         gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
     },
     {
-        id: 5,
+        id: 4,
         title: 'Dungeon Master',
         artist: '던전의 지배자 OST',
         duration: '4:05',
         gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
     },
     {
-        id: 6,
+        id: 5,
         title: 'Shadow Detective',
         artist: '그림자 탐정사무소 OST',
         duration: '3:52',
         gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
     },
     {
-        id: 7,
+        id: 6,
         title: 'Magic Academy',
         artist: '마법학교의 낙오생 OST',
         duration: '3:38',
         gradient: 'linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)'
     },
     {
-        id: 8,
+        id: 7,
         title: 'Golden Dreams',
         artist: '재벌가의 막내아들 OST',
         duration: '4:20',
         gradient: 'linear-gradient(135deg, #c3cfe2 0%, #f5f7fa 100%)'
     },
     {
-        id: 9,
+        id: 8,
         title: 'Martial Arts Legend',
         artist: '무림의 절대고수 OST',
         duration: '3:55',

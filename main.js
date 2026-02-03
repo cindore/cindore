@@ -165,48 +165,14 @@ const animationsData = [
 const musicData = [
     {
         id: 1,
-        title: 'Winter Strawberry Life',
-        artist: 'Shin Yeseo (Piano Solo)',
+        title: 'Winter Strawberry Life - Piano Solo',
+        artist: 'Shin Yeseo',
+        subtitle: '로사멜시(Rosa Melsy) OST',
         duration: '3:24',
         gradient: 'linear-gradient(135deg, #e8b4b8 0%, #a855f7 100%)',
         coverImage: 'https://i.scdn.co/image/ab67616d00001e02c008f0fbd1b7aac61eee33d2',
-        spotifyEmbed: 'https://open.spotify.com/embed/album/0TizPzWorrhQBMaplKLmLC?utm_source=generator&theme=0',
+        spotifyEmbed: 'https://open.spotify.com/embed/track/3phDz67JfTXoNwTwRPT5UX?utm_source=generator&theme=0',
         isNew: true
-    },
-    {
-        id: 2,
-        title: 'Return of the Hero',
-        artist: '회귀자의 세계정복 OST',
-        duration: '4:12',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
-    },
-    {
-        id: 3,
-        title: 'Starlight Dreams',
-        artist: '별이 된 소녀 OST',
-        duration: '3:28',
-        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
-    },
-    {
-        id: 4,
-        title: 'Dungeon Conquest',
-        artist: '던전의 지배자 OST',
-        duration: '4:05',
-        gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
-    },
-    {
-        id: 5,
-        title: 'Shadow Mystery',
-        artist: '그림자 탐정사무소 OST',
-        duration: '3:52',
-        gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
-    },
-    {
-        id: 6,
-        title: 'Magic Academy',
-        artist: '마법학교의 낙오생 OST',
-        duration: '3:38',
-        gradient: 'linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)'
     }
 ];
 
@@ -900,7 +866,7 @@ function renderPlaylist() {
             </div>
             <div class="track-info">
                 <h4>${track.title}</h4>
-                <p>${track.artist}</p>
+                <p>${track.subtitle || track.artist}</p>
             </div>
             <span class="track-duration">${track.duration}</span>
             <div class="track-play-icon"><i class="fas fa-play"></i></div>
@@ -1072,7 +1038,7 @@ function updatePlayerDisplay() {
     const playerControls = document.querySelector('.player-controls');
 
     if (trackTitle) trackTitle.textContent = track.title;
-    if (trackArtist) trackArtist.textContent = track.artist;
+    if (trackArtist) trackArtist.textContent = track.subtitle || track.artist;
     if (totalTime) totalTime.textContent = track.duration;
 
     if (albumArt) {

@@ -173,6 +173,46 @@ const musicData = [
         coverImage: 'https://i.scdn.co/image/ab67616d00001e02c008f0fbd1b7aac61eee33d2',
         spotifyEmbed: 'https://open.spotify.com/embed/track/3phDz67JfTXoNwTwRPT5UX?utm_source=generator&theme=0',
         isNew: true
+    },
+    {
+        id: 2,
+        title: 'Moonlit Serenade',
+        artist: 'Cindore Studio',
+        subtitle: '달빛 아래 검의 노래 OST',
+        duration: '4:12',
+        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    },
+    {
+        id: 3,
+        title: 'Return of the Hero',
+        artist: 'Cindore Studio',
+        subtitle: '회귀자의 세계정복 OST',
+        duration: '3:45',
+        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+    },
+    {
+        id: 4,
+        title: 'Starlight Dreams',
+        artist: 'Cindore Studio',
+        subtitle: '별이 된 소녀 OST',
+        duration: '3:28',
+        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+    },
+    {
+        id: 5,
+        title: 'Dungeon Conquest',
+        artist: 'Cindore Studio',
+        subtitle: '던전의 지배자 OST',
+        duration: '4:05',
+        gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+    },
+    {
+        id: 6,
+        title: 'Shadow Mystery',
+        artist: 'Cindore Studio',
+        subtitle: '그림자 탐정사무소 OST',
+        duration: '3:52',
+        gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
     }
 ];
 
@@ -953,48 +993,7 @@ function simulatePlayback() {
 }
 
 function selectTrack(index) {
-    const spotifyContainer = document.getElementById('spotifyContainer');
-    const spotifyEmbed = document.getElementById('spotifyEmbed');
-    const progressBar = document.querySelector('.progress-bar');
-    const playerTime = document.querySelector('.player-time');
-    const playerControls = document.querySelector('.player-controls');
-
-    // Reset play state if changing tracks
-    if (isPlaying) {
-        isPlaying = false;
-        const playBtn = document.getElementById('playBtn');
-        const albumArt = document.getElementById('albumArt');
-        if (playBtn) playBtn.innerHTML = '<i class="fas fa-play"></i>';
-        if (albumArt) albumArt.classList.remove('playing');
-    }
-
     currentTrack = index;
-    const track = musicData[currentTrack];
-    const progress = document.getElementById('progress');
-    const currentTime = document.getElementById('currentTime');
-
-    if (progress) progress.style.width = '0%';
-    if (currentTime) currentTime.textContent = '0:00';
-
-    // Handle Spotify tracks - show embed immediately
-    if (track.spotifyEmbed && spotifyContainer && spotifyEmbed) {
-        spotifyEmbed.src = track.spotifyEmbed;
-        spotifyContainer.style.display = 'block';
-        // Hide normal player controls for Spotify
-        if (progressBar) progressBar.style.display = 'none';
-        if (playerTime) playerTime.style.display = 'none';
-        if (playerControls) playerControls.style.display = 'none';
-    } else {
-        // Non-Spotify track - show normal controls
-        if (spotifyContainer) spotifyContainer.style.display = 'none';
-        if (spotifyEmbed) spotifyEmbed.src = '';
-        if (progressBar) progressBar.style.display = 'block';
-        if (playerTime) playerTime.style.display = 'flex';
-        if (playerControls) playerControls.style.display = 'flex';
-        // Auto-play non-Spotify tracks
-        togglePlay();
-    }
-
     updatePlayerDisplay();
     renderPlaylist();
 }
@@ -1029,17 +1028,12 @@ function updatePlayerDisplay() {
     const track = musicData[currentTrack];
     const trackTitle = document.getElementById('trackTitle');
     const trackArtist = document.getElementById('trackArtist');
-    const totalTime = document.getElementById('totalTime');
     const albumArt = document.getElementById('albumArt');
     const spotifyContainer = document.getElementById('spotifyContainer');
     const spotifyEmbed = document.getElementById('spotifyEmbed');
-    const progressBar = document.querySelector('.progress-bar');
-    const playerTime = document.querySelector('.player-time');
-    const playerControls = document.querySelector('.player-controls');
 
     if (trackTitle) trackTitle.textContent = track.title;
     if (trackArtist) trackArtist.textContent = track.subtitle || track.artist;
-    if (totalTime) totalTime.textContent = track.duration;
 
     if (albumArt) {
         if (track.coverImage) {
@@ -1049,21 +1043,13 @@ function updatePlayerDisplay() {
         }
     }
 
-    // Handle Spotify embed visibility
-    if (track.spotifyEmbed) {
-        if (spotifyEmbed && !spotifyEmbed.src.includes(track.spotifyEmbed.split('?')[0])) {
-            spotifyEmbed.src = track.spotifyEmbed;
-        }
+    // Handle Spotify embed
+    if (track.spotifyEmbed && spotifyEmbed) {
+        spotifyEmbed.src = track.spotifyEmbed;
         if (spotifyContainer) spotifyContainer.style.display = 'block';
-        if (progressBar) progressBar.style.display = 'none';
-        if (playerTime) playerTime.style.display = 'none';
-        if (playerControls) playerControls.style.display = 'none';
     } else {
         if (spotifyContainer) spotifyContainer.style.display = 'none';
         if (spotifyEmbed) spotifyEmbed.src = '';
-        if (progressBar) progressBar.style.display = 'block';
-        if (playerTime) playerTime.style.display = 'flex';
-        if (playerControls) playerControls.style.display = 'flex';
     }
 }
 

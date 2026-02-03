@@ -1026,31 +1026,18 @@ function resetAndPlay() {
 
 function updatePlayerDisplay() {
     const track = musicData[currentTrack];
-    const trackTitle = document.getElementById('trackTitle');
-    const trackArtist = document.getElementById('trackArtist');
-    const albumArt = document.getElementById('albumArt');
-    const spotifyContainer = document.getElementById('spotifyContainer');
     const spotifyEmbed = document.getElementById('spotifyEmbed');
+    const totalTime = document.getElementById('totalTime');
+    const progressFill = document.getElementById('progressFill');
 
-    if (trackTitle) trackTitle.textContent = track.title;
-    if (trackArtist) trackArtist.textContent = track.subtitle || track.artist;
-
-    if (albumArt) {
-        if (track.coverImage) {
-            albumArt.style.background = `url('${track.coverImage}') center/cover no-repeat`;
-        } else {
-            albumArt.style.background = track.gradient;
-        }
-    }
-
-    // Handle Spotify embed
+    // Update Spotify embed
     if (track.spotifyEmbed && spotifyEmbed) {
         spotifyEmbed.src = track.spotifyEmbed;
-        if (spotifyContainer) spotifyContainer.style.display = 'block';
-    } else {
-        if (spotifyContainer) spotifyContainer.style.display = 'none';
-        if (spotifyEmbed) spotifyEmbed.src = '';
     }
+
+    // Update time display
+    if (totalTime) totalTime.textContent = track.duration;
+    if (progressFill) progressFill.style.width = '0%';
 }
 
 // ==================== NFTs ====================

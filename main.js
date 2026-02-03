@@ -96,8 +96,8 @@ const novelsData = [
 const animationsData = [
     {
         id: 1,
-        title: 'Cindore 오리지널',
-        episode: '신규 애니메이션 예고편',
+        title: 'Cindore 첫 오리지널',
+        episode: 'LOVER (2024)',
         duration: '3:30',
         gradient: 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)',
         youtubeId: 'nHPXmV8SZTw',

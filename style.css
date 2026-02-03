@@ -1133,126 +1133,94 @@ body {
     color: var(--text-muted);
 }
 
-/* Music Card */
-.music-card {
-    position: relative;
-    max-width: 500px;
-    margin: 0 auto 40px;
-    background: var(--dark-light);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+/* Music Showcase */
+.music-showcase {
+    max-width: 450px;
+    margin: 0 auto 50px;
+    background: linear-gradient(145deg, rgba(255, 182, 193, 0.15) 0%, rgba(147, 112, 219, 0.15) 100%);
+    border: 1px solid rgba(255, 182, 193, 0.3);
+    border-radius: 30px;
+    padding: 40px 35px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-.spotify-btn {
+.music-showcase-cover {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+}
+
+.music-showcase-cover img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 15px 50px rgba(255, 105, 180, 0.4);
+}
+
+.showcase-badge {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: -10px;
+    left: -10px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.5);
+}
+
+.music-showcase-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.music-showcase-subtitle {
+    font-size: 0.95rem;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+}
+
+.spotify-embed-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    height: 80px;
+}
+
+.spotify-embed-wrapper iframe {
+    border-radius: 12px;
+}
+
+.spotify-link {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background: #1DB954;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #1DB954, #1ed760);
     color: white;
-    border-radius: 20px;
-    font-size: 0.75rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(29, 185, 84, 0.4);
 }
 
-.spotify-btn:hover {
-    background: #1ed760;
-    transform: scale(1.05);
+.spotify-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(29, 185, 84, 0.5);
 }
 
-.spotify-btn i {
-    font-size: 1rem;
-}
-
-.music-card-header {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-    align-items: center;
-}
-
-.music-card-cover {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    flex-shrink: 0;
-}
-
-.music-card-cover img {
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-
-.music-card-badge {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: var(--accent);
-    color: white;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 0.7rem;
-    font-weight: 700;
-}
-
-.music-card-info {
-    flex: 1;
-}
-
-.music-card-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #fff;
-}
-
-.music-card-artist {
-    font-size: 1rem;
-    color: var(--primary);
-    margin-bottom: 4px;
-}
-
-.music-card-meta {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-.music-card-player {
-    margin-top: 20px;
-}
-
-.player-progress-bar {
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.player-progress {
-    height: 100%;
-    background: var(--gradient);
-    border-radius: 3px;
-    transition: width 0.1s linear;
-}
-
-.player-time-display {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 8px;
-    font-size: 0.8rem;
-    color: var(--text-muted);
+.spotify-link i {
+    font-size: 1.2rem;
 }
 
 /* Playlist */

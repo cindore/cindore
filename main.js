@@ -268,6 +268,7 @@ const planPrices = {
 
 // ==================== Initialization ====================
 document.addEventListener('DOMContentLoaded', () => {
+    initMouseLight();
     initParticles();
     initHoverEffects();
     initNavigation();
@@ -294,6 +295,65 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('loaded');
     }, 100);
 });
+
+// ==================== Mouse Light Effect ====================
+function initMouseLight() {
+    const mouseLight = document.getElementById('mouseLight');
+    if (!mouseLight) return;
+
+    // Hide on touch devices
+    if ('ontouchstart' in window) {
+        mouseLight.style.display = 'none';
+        return;
+    }
+
+    let lightX = 0, lightY = 0;
+    let targetX = 0, targetY = 0;
+
+    // Smooth follow
+    document.addEventListener('mousemove', (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+    });
+
+    function animateLight() {
+        lightX += (targetX - lightX) * 0.08;
+        lightY += (targetY - lightY) * 0.08;
+        mouseLight.style.left = lightX + 'px';
+        mouseLight.style.top = lightY + 'px';
+        requestAnimationFrame(animateLight);
+    }
+    animateLight();
+
+    // Touch ripple on click
+    document.addEventListener('click', (e) => {
+        createTouchRipple(e.clientX, e.clientY);
+    });
+
+    // Interactive element glow tracking
+    const interactiveElements = document.querySelectorAll('.novel-card, .nft-card, .plan-card, .track-item, .animation-item');
+
+    interactiveElements.forEach(el => {
+        el.style.position = 'relative';
+
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            el.style.setProperty('--mouse-x', x + '%');
+            el.style.setProperty('--mouse-y', y + '%');
+        });
+    });
+}
+
+function createTouchRipple(x, y) {
+    const ripple = document.createElement('div');
+    ripple.className = 'touch-ripple';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    document.body.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 800);
+}
 
 // ==================== Hover Effects ====================
 function initHoverEffects() {

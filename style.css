@@ -1452,6 +1452,8 @@ body {
     border-radius: 15px;
     flex-shrink: 0;
     animation: rotate-album 10s linear infinite paused;
+    position: relative;
+    overflow: hidden;
 }
 
 .album-art.playing {
@@ -1461,6 +1463,25 @@ body {
 @keyframes rotate-album {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+/* Spotify Embed Container */
+.spotify-embed-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.spotify-embed-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
 }
 
 .player-info {

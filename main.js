@@ -165,11 +165,12 @@ const animationsData = [
 const musicData = [
     {
         id: 1,
-        title: 'Moonlit Serenade',
-        artist: '달빛 아래 검의 노래 OST',
-        duration: '3:45',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        coverImage: null,
+        title: 'Winter Strawberry Life',
+        artist: 'Shin Yeseo (Piano Solo)',
+        duration: '3:24',
+        gradient: 'linear-gradient(135deg, #e8b4b8 0%, #a855f7 100%)',
+        coverImage: 'https://i.scdn.co/image/ab67616d00001e02c008f0fbd1b7aac61eee33d2',
+        spotifyEmbed: 'https://open.spotify.com/embed/album/0TizPzWorrhQBMaplKLmLC?utm_source=generator&theme=0',
         isNew: true
     },
     {
@@ -930,14 +931,30 @@ function togglePlay() {
     isPlaying = !isPlaying;
     const playBtn = document.getElementById('playBtn');
     const albumArt = document.getElementById('albumArt');
+    const track = musicData[currentTrack];
+    const spotifyContainer = document.getElementById('spotifyContainer');
+    const spotifyEmbed = document.getElementById('spotifyEmbed');
 
     playBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
 
     if (isPlaying) {
         albumArt?.classList.add('playing');
-        simulatePlayback();
+
+        // Check if current track has Spotify embed
+        if (track.spotifyEmbed && spotifyContainer && spotifyEmbed) {
+            spotifyEmbed.src = track.spotifyEmbed;
+            spotifyContainer.style.display = 'block';
+        } else {
+            if (spotifyContainer) spotifyContainer.style.display = 'none';
+            simulatePlayback();
+        }
     } else {
         albumArt?.classList.remove('playing');
+        // Pause Spotify by clearing src
+        if (track.spotifyEmbed && spotifyEmbed) {
+            spotifyEmbed.src = '';
+            if (spotifyContainer) spotifyContainer.style.display = 'none';
+        }
     }
 }
 
@@ -970,6 +987,21 @@ function simulatePlayback() {
 }
 
 function selectTrack(index) {
+    // Reset Spotify embed if switching tracks
+    const spotifyContainer = document.getElementById('spotifyContainer');
+    const spotifyEmbed = document.getElementById('spotifyEmbed');
+    if (spotifyContainer) spotifyContainer.style.display = 'none';
+    if (spotifyEmbed) spotifyEmbed.src = '';
+
+    // Reset play state if changing tracks
+    if (isPlaying) {
+        isPlaying = false;
+        const playBtn = document.getElementById('playBtn');
+        const albumArt = document.getElementById('albumArt');
+        if (playBtn) playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        if (albumArt) albumArt.classList.remove('playing');
+    }
+
     currentTrack = index;
     const progress = document.getElementById('progress');
     const currentTime = document.getElementById('currentTime');
@@ -980,9 +1012,8 @@ function selectTrack(index) {
     updatePlayerDisplay();
     renderPlaylist();
 
-    if (!isPlaying) {
-        togglePlay();
-    }
+    // Auto-play the selected track
+    togglePlay();
 }
 
 function prevTrack() {

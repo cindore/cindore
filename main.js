@@ -268,9 +268,8 @@ const planPrices = {
 
 // ==================== Initialization ====================
 document.addEventListener('DOMContentLoaded', () => {
-    initCustomCursor();
     initParticles();
-    initMagneticButtons();
+    initHoverEffects();
     initNavigation();
     initModals();
     initPaymentToggle();
@@ -296,104 +295,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 });
 
-// ==================== Custom Cursor ====================
-function initCustomCursor() {
-    const cursor = document.querySelector('.cursor');
-    const follower = document.querySelector('.cursor-follower');
+// ==================== Hover Effects ====================
+function initHoverEffects() {
+    // Smooth scale on cards
+    const cards = document.querySelectorAll('.novel-card, .feature-card, .plan-card, .nft-card, .track-item, .animation-item');
 
-    if (!cursor || !follower) return;
-
-    // Check if touch device
-    if ('ontouchstart' in window) {
-        cursor.style.display = 'none';
-        follower.style.display = 'none';
-        document.body.style.cursor = 'auto';
-        return;
-    }
-
-    let cursorX = 0, cursorY = 0;
-    let followerX = 0, followerY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        targetX = e.clientX;
-        targetY = e.clientY;
-    });
-
-    // Smooth cursor animation with RAF
-    function animateCursor() {
-        cursorX += (mouseX - cursorX) * 0.15;
-        cursorY += (mouseY - cursorY) * 0.15;
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-
-        followerX += (mouseX - followerX) * 0.08;
-        followerY += (mouseY - followerY) * 0.08;
-        follower.style.left = followerX + 'px';
-        follower.style.top = followerY + 'px';
-
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // Cursor effects on interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .novel-card, .feature-card, .plan-card, .nft-card, .track-item, .animation-item, .filter-btn, input, .card-float');
-
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.classList.add('active');
-            follower.classList.add('active');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', (e) => {
+            card.style.transform = 'translateY(-8px) scale(1.02)';
         });
-        el.addEventListener('mouseleave', () => {
-            cursor.classList.remove('active');
-            follower.classList.remove('active');
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
         });
     });
 
-    // Mouse trail effect
-    let lastTrailTime = 0;
-    document.addEventListener('mousemove', (e) => {
-        const now = Date.now();
-        if (now - lastTrailTime < 50) return;
-        lastTrailTime = now;
-        createTrail(e.clientX, e.clientY);
-    });
-}
+    // Button shine effect
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-login, .btn-wallet');
 
-function createTrail(x, y) {
-    const trail = document.createElement('div');
-    trail.className = 'trail';
-    trail.style.left = x + 'px';
-    trail.style.top = y + 'px';
-    trail.style.width = (Math.random() * 8 + 4) + 'px';
-    trail.style.height = trail.style.width;
-    document.body.appendChild(trail);
-
-    requestAnimationFrame(() => {
-        trail.style.opacity = '0';
-        trail.style.transform = 'scale(0)';
-    });
-
-    setTimeout(() => trail.remove(), 600);
-}
-
-// ==================== Magnetic Buttons ====================
-function initMagneticButtons() {
-    const magneticElements = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-login, .btn-wallet, .control-btn, .play-button-large');
-
-    magneticElements.forEach(el => {
-        el.addEventListener('mousemove', (e) => {
-            const rect = el.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            btn.style.setProperty('--shine-x', x + 'px');
         });
 
-        el.addEventListener('mouseleave', () => {
-            el.style.transform = '';
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            btn.style.setProperty('--shine-x', x + 'px');
         });
+    });
+
+    // Click ripple effect
+    document.addEventListener('click', (e) => {
+        const target = e.target.closest('button, .btn-primary, .btn-secondary, .track-item, .novel-card');
+        if (!target) return;
+
+        const ripple = document.createElement('span');
+        ripple.className = 'click-ripple';
+        const rect = target.getBoundingClientRect();
+        ripple.style.left = (e.clientX - rect.left) + 'px';
+        ripple.style.top = (e.clientY - rect.top) + 'px';
+        target.style.position = 'relative';
+        target.style.overflow = 'hidden';
+        target.appendChild(ripple);
+
+        setTimeout(() => ripple.remove(), 600);
     });
 }
 

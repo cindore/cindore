@@ -34,39 +34,49 @@ body {
     cursor: none;
 }
 
-/* Custom Cursor */
-.cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--primary);
+/* Click Ripple Effect */
+.click-ripple {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
-    position: fixed;
+    transform: translate(-50%, -50%) scale(0);
+    animation: rippleExpand 0.6s ease-out forwards;
     pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease, background 0.2s ease;
-    transform: translate(-50%, -50%);
+    z-index: 100;
 }
 
-.cursor-follower {
-    width: 40px;
-    height: 40px;
-    background: rgba(108, 92, 231, 0.2);
-    border-radius: 50%;
-    position: fixed;
+@keyframes rippleExpand {
+    to {
+        transform: translate(-50%, -50%) scale(20);
+        opacity: 0;
+    }
+}
+
+/* Button Shine Effect */
+.btn-primary, .btn-secondary, .btn-login, .btn-wallet {
+    --shine-x: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after, .btn-secondary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--shine-x);
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-50%) skewX(-15deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
     pointer-events: none;
-    z-index: 9998;
-    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-    transform: translate(-50%, -50%);
 }
 
-.cursor.active {
-    transform: translate(-50%, -50%) scale(0.5);
-    background: var(--primary);
-}
-
-.cursor-follower.active {
-    width: 60px;
-    height: 60px;
+.btn-primary:hover::after, .btn-secondary:hover::after {
+    opacity: 1;
 }
 
 /* Particle Background */
@@ -108,19 +118,6 @@ body {
     }
 }
 
-/* Mouse Trail Effect */
-.trail {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background: var(--gradient);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9997;
-    opacity: 0.6;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translate(-50%, -50%) scale(1);
-}
 
 /* Interactive Particles */
 .interactive-particle {
@@ -2615,10 +2612,6 @@ body {
     /* Hide custom cursor on mobile */
     body {
         cursor: auto;
-    }
-
-    .cursor, .cursor-follower, .trail {
-        display: none !important;
     }
 
     .nav-links {

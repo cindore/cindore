@@ -987,11 +987,11 @@ function simulatePlayback() {
 }
 
 function selectTrack(index) {
-    // Reset Spotify embed if switching tracks
     const spotifyContainer = document.getElementById('spotifyContainer');
     const spotifyEmbed = document.getElementById('spotifyEmbed');
-    if (spotifyContainer) spotifyContainer.style.display = 'none';
-    if (spotifyEmbed) spotifyEmbed.src = '';
+    const progressBar = document.querySelector('.progress-bar');
+    const playerTime = document.querySelector('.player-time');
+    const playerControls = document.querySelector('.player-controls');
 
     // Reset play state if changing tracks
     if (isPlaying) {
@@ -1003,17 +1003,34 @@ function selectTrack(index) {
     }
 
     currentTrack = index;
+    const track = musicData[currentTrack];
     const progress = document.getElementById('progress');
     const currentTime = document.getElementById('currentTime');
 
     if (progress) progress.style.width = '0%';
     if (currentTime) currentTime.textContent = '0:00';
 
+    // Handle Spotify tracks - show embed immediately
+    if (track.spotifyEmbed && spotifyContainer && spotifyEmbed) {
+        spotifyEmbed.src = track.spotifyEmbed;
+        spotifyContainer.style.display = 'block';
+        // Hide normal player controls for Spotify
+        if (progressBar) progressBar.style.display = 'none';
+        if (playerTime) playerTime.style.display = 'none';
+        if (playerControls) playerControls.style.display = 'none';
+    } else {
+        // Non-Spotify track - show normal controls
+        if (spotifyContainer) spotifyContainer.style.display = 'none';
+        if (spotifyEmbed) spotifyEmbed.src = '';
+        if (progressBar) progressBar.style.display = 'block';
+        if (playerTime) playerTime.style.display = 'flex';
+        if (playerControls) playerControls.style.display = 'flex';
+        // Auto-play non-Spotify tracks
+        togglePlay();
+    }
+
     updatePlayerDisplay();
     renderPlaylist();
-
-    // Auto-play the selected track
-    togglePlay();
 }
 
 function prevTrack() {
@@ -1048,6 +1065,11 @@ function updatePlayerDisplay() {
     const trackArtist = document.getElementById('trackArtist');
     const totalTime = document.getElementById('totalTime');
     const albumArt = document.getElementById('albumArt');
+    const spotifyContainer = document.getElementById('spotifyContainer');
+    const spotifyEmbed = document.getElementById('spotifyEmbed');
+    const progressBar = document.querySelector('.progress-bar');
+    const playerTime = document.querySelector('.player-time');
+    const playerControls = document.querySelector('.player-controls');
 
     if (trackTitle) trackTitle.textContent = track.title;
     if (trackArtist) trackArtist.textContent = track.artist;
@@ -1059,6 +1081,23 @@ function updatePlayerDisplay() {
         } else {
             albumArt.style.background = track.gradient;
         }
+    }
+
+    // Handle Spotify embed visibility
+    if (track.spotifyEmbed) {
+        if (spotifyEmbed && !spotifyEmbed.src.includes(track.spotifyEmbed.split('?')[0])) {
+            spotifyEmbed.src = track.spotifyEmbed;
+        }
+        if (spotifyContainer) spotifyContainer.style.display = 'block';
+        if (progressBar) progressBar.style.display = 'none';
+        if (playerTime) playerTime.style.display = 'none';
+        if (playerControls) playerControls.style.display = 'none';
+    } else {
+        if (spotifyContainer) spotifyContainer.style.display = 'none';
+        if (spotifyEmbed) spotifyEmbed.src = '';
+        if (progressBar) progressBar.style.display = 'block';
+        if (playerTime) playerTime.style.display = 'flex';
+        if (playerControls) playerControls.style.display = 'flex';
     }
 }
 

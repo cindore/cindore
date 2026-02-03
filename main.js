@@ -247,6 +247,69 @@ const nftData = [
     }
 ];
 
+const exhibitionData = [
+    {
+        id: 1,
+        title: '달빛 아래 검의 세계',
+        description: '판타지 소설 속 세계관을 현실에서 체험하는 몰입형 전시',
+        date: '2025.03.01 - 04.30',
+        location: '서울 DDP',
+        badge: '진행중',
+        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    },
+    {
+        id: 2,
+        title: '회귀자의 기억',
+        description: '시간여행과 회귀를 주제로 한 인터랙티브 미디어아트',
+        date: '2025.05.15 - 07.15',
+        location: '부산 벡스코',
+        badge: '예정',
+        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+    },
+    {
+        id: 3,
+        title: '별이 된 소녀 - 빛의 정원',
+        description: 'LED와 프로젝션 맵핑으로 구현한 환상의 정원',
+        date: '2025.06.01 - 08.31',
+        location: '제주 아트센터',
+        badge: '예정',
+        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+    }
+];
+
+const performanceData = [
+    {
+        id: 1,
+        title: '달빛검사: 각성',
+        subtitle: '뮤지컬',
+        type: '뮤지컬',
+        date: '2025.04.10 - 06.30',
+        location: '블루스퀘어 신한카드홀',
+        time: '평일 19:30 / 주말 14:00, 19:00',
+        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    },
+    {
+        id: 2,
+        title: '회귀자의 세계정복',
+        subtitle: '연극',
+        type: '연극',
+        date: '2025.05.01 - 05.31',
+        location: '대학로 아트원씨어터',
+        time: '화-금 19:30 / 토-일 15:00, 19:00',
+        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+    },
+    {
+        id: 3,
+        title: 'Cindore Orchestra Concert',
+        subtitle: 'OST 콘서트',
+        type: '콘서트',
+        date: '2025.07.20',
+        location: '예술의전당 콘서트홀',
+        time: '19:00',
+        gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+    }
+];
+
 // ==================== State ====================
 let currentSection = 'home';
 let isWeb3Mode = false;
@@ -278,6 +341,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAnimations();
     renderPlaylist();
     renderNFTs();
+    renderExhibitions();
+    renderPerformances();
     initMusicPlayer();
     initFilterButtons();
     initLoginTabs();
@@ -1065,6 +1130,56 @@ function viewNFT(id) {
         return;
     }
     showToast('NFT 상세 페이지로 이동합니다');
+}
+
+// ==================== Exhibitions ====================
+function renderExhibitions() {
+    const grid = document.getElementById('exhibitionGrid');
+    if (!grid) return;
+
+    grid.innerHTML = exhibitionData.map((exhibition, index) => `
+        <div class="exhibition-card animate-ready" style="--delay: ${index * 0.1}s">
+            <div class="exhibition-image" style="background: ${exhibition.gradient}">
+                <span class="exhibition-badge">${exhibition.badge}</span>
+            </div>
+            <div class="exhibition-content">
+                <h3>${exhibition.title}</h3>
+                <p>${exhibition.description}</p>
+                <div class="exhibition-info">
+                    <span class="exhibition-date"><i class="far fa-calendar"></i> ${exhibition.date}</span>
+                    <span class="exhibition-location"><i class="fas fa-map-marker-alt"></i> ${exhibition.location}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ==================== Performances ====================
+function renderPerformances() {
+    const grid = document.getElementById('performanceGrid');
+    if (!grid) return;
+
+    grid.innerHTML = performanceData.map((perf, index) => `
+        <div class="performance-card animate-ready" style="--delay: ${index * 0.1}s">
+            <div class="performance-poster" style="background: ${perf.gradient}">
+                <span class="performance-type">${perf.type}</span>
+            </div>
+            <div class="performance-content">
+                <h3>${perf.title}</h3>
+                <p class="subtitle">${perf.subtitle}</p>
+                <div class="performance-details">
+                    <span><i class="far fa-calendar"></i> ${perf.date}</span>
+                    <span><i class="fas fa-map-marker-alt"></i> ${perf.location}</span>
+                    <span><i class="far fa-clock"></i> ${perf.time}</span>
+                </div>
+                <a href="#" class="btn-ticket" onclick="bookTicket(${perf.id}); return false;">예매하기</a>
+            </div>
+        </div>
+    `).join('');
+}
+
+function bookTicket(id) {
+    showToast('예매 페이지로 이동합니다');
 }
 
 // ==================== Subscription ====================

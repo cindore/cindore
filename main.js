@@ -13,7 +13,7 @@ const novelsData = [
         views: '2.3M',
         status: '연재중',
         tags: ['판타지', '무협'],
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        gradient: 'linear-gradient(135deg, #5a9bc4 0%, #7eb8da 100%)',
         description: '달빛이 비추는 밤, 검은 노래한다.'
     },
     {
@@ -26,7 +26,7 @@ const novelsData = [
         views: '5.1M',
         status: '완결',
         tags: ['현대판타지', '회귀'],
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        gradient: 'linear-gradient(135deg, #7eb8da 0%, #a8cce0 100%)',
         description: '10년 후의 기억을 가진 채 돌아왔다.'
     },
     {
@@ -39,7 +39,7 @@ const novelsData = [
         views: '1.8M',
         status: '연재중',
         tags: ['로맨스', '힐링'],
-        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        gradient: 'linear-gradient(135deg, #6a9fc4 0%, #d1d5db 100%)',
         description: '그녀는 밤하늘의 별이 되었다.'
     },
     {
@@ -52,7 +52,7 @@ const novelsData = [
         views: '8.7M',
         status: '연재중',
         tags: ['액션', '던전'],
-        gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+        gradient: 'linear-gradient(135deg, #8fb8d4 0%, #e2e8f0 100%)',
         description: '세계에서 가장 깊은 던전의 주인이 되다.'
     },
     {
@@ -65,7 +65,7 @@ const novelsData = [
         views: '1.2M',
         status: '연재중',
         tags: ['미스터리', '추리'],
-        gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+        gradient: 'linear-gradient(135deg, #a8cce0 0%, #e2e8f0 100%)',
         description: '그림자 속에 숨겨진 진실을 찾아서.'
     },
     {
@@ -78,7 +78,7 @@ const novelsData = [
         views: '3.4M',
         status: '연재중',
         tags: ['판타지', '학원'],
-        gradient: 'linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)',
+        gradient: 'linear-gradient(135deg, #5a9bc4 0%, #b8c5d0 100%)',
         description: '재능 없는 자의 마법이 시작된다.'
     },
     {
@@ -91,7 +91,7 @@ const novelsData = [
         views: '4.2M',
         status: '완결',
         tags: ['현대', '로맨스'],
-        gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+        gradient: 'linear-gradient(135deg, #b8c5d0 0%, #e2e8f0 100%)',
         description: '모든 것을 가진 남자의 사랑 이야기.'
     },
     {
@@ -104,7 +104,7 @@ const novelsData = [
         views: '6.5M',
         status: '연재중',
         tags: ['무협', '액션'],
-        gradient: 'linear-gradient(135deg, #f5af19 0%, #f12711 100%)',
+        gradient: 'linear-gradient(135deg, #4a8ab8 0%, #7eb8da 100%)',
         description: '천하제일의 무공을 향한 여정.'
     }
 ];
@@ -115,7 +115,7 @@ const animationsData = [
         title: 'LOVER (2024)',
         episode: 'Cindore 오리지널 애니메이션',
         duration: '12:40',
-        gradient: 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)',
+        gradient: 'linear-gradient(135deg, #5a9bc4 0%, #a8cce0 100%)',
         youtubeId: 'nHPXmV8SZTw',
         isNew: true,
         views: '1.2M'
@@ -125,7 +125,7 @@ const animationsData = [
         title: '달빛 아래 검의 노래',
         episode: 'EP.1 - 운명의 시작',
         duration: '24:30',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        gradient: 'linear-gradient(135deg, #5a9bc4 0%, #7eb8da 100%)',
         views: '890K'
     },
     {
@@ -133,7 +133,7 @@ const animationsData = [
         title: '달빛 아래 검의 노래',
         episode: 'EP.2 - 첫 번째 시련',
         duration: '23:45',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        gradient: 'linear-gradient(135deg, #5a9bc4 0%, #7eb8da 100%)',
         views: '756K'
     },
     {
@@ -141,7 +141,7 @@ const animationsData = [
         title: '회귀자의 세계정복',
         episode: 'EP.1 - 돌아온 자',
         duration: '25:00',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        gradient: 'linear-gradient(135deg, #7eb8da 0%, #a8cce0 100%)',
         views: '1.5M'
     },
     {
@@ -149,7 +149,7 @@ const animationsData = [
         title: '회귀자의 세계정복',
         episode: 'EP.2 - 새로운 시작',
         duration: '24:15',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        gradient: 'linear-gradient(135deg, #7eb8da 0%, #a8cce0 100%)',
         views: '1.2M'
     },
     {
@@ -157,7 +157,7 @@ const animationsData = [
         title: '별이 된 소녀',
         episode: 'EP.1 - 별빛 아래서',
         duration: '22:30',
-        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        gradient: 'linear-gradient(135deg, #6a9fc4 0%, #d1d5db 100%)',
         views: '680K'
     }
 ];
@@ -169,7 +169,7 @@ const musicData = [
         artist: 'Shin Yeseo',
         subtitle: '로사멜시(Rosa Melsy) OST',
         duration: '3:24',
-        gradient: 'linear-gradient(135deg, #e8b4b8 0%, #a855f7 100%)',
+        gradient: 'linear-gradient(135deg, #7eb8da 0%, #d1d5db 100%)',
         coverImage: 'https://i.scdn.co/image/ab67616d00001e02c008f0fbd1b7aac61eee33d2',
         spotifyEmbed: 'https://open.spotify.com/embed/track/3phDz67JfTXoNwTwRPT5UX?utm_source=generator&theme=0',
         isNew: true
@@ -180,7 +180,7 @@ const musicData = [
         artist: 'Cindore Studio',
         subtitle: '달빛 아래 검의 노래 OST',
         duration: '4:12',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        gradient: 'linear-gradient(135deg, #5a9bc4 0%, #7eb8da 100%)'
     },
     {
         id: 3,
@@ -188,7 +188,7 @@ const musicData = [
         artist: 'Cindore Studio',
         subtitle: '회귀자의 세계정복 OST',
         duration: '3:45',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        gradient: 'linear-gradient(135deg, #7eb8da 0%, #a8cce0 100%)'
     },
     {
         id: 4,
@@ -196,7 +196,7 @@ const musicData = [
         artist: 'Cindore Studio',
         subtitle: '별이 된 소녀 OST',
         duration: '3:28',
-        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+        gradient: 'linear-gradient(135deg, #6a9fc4 0%, #d1d5db 100%)'
     },
     {
         id: 5,
@@ -204,7 +204,7 @@ const musicData = [
         artist: 'Cindore Studio',
         subtitle: '던전의 지배자 OST',
         duration: '4:05',
-        gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+        gradient: 'linear-gradient(135deg, #8fb8d4 0%, #e2e8f0 100%)'
     },
     {
         id: 6,
@@ -212,7 +212,7 @@ const musicData = [
         artist: 'Cindore Studio',
         subtitle: '그림자 탐정사무소 OST',
         duration: '3:52',
-        gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+        gradient: 'linear-gradient(135deg, #a8cce0 0%, #e2e8f0 100%)'
     }
 ];
 
@@ -222,28 +222,28 @@ const nftData = [
         title: '달빛검사 #001',
         rarity: 'legendary',
         price: '0.5 ETH',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        gradient: 'linear-gradient(135deg, #5a9bc4 0%, #7eb8da 100%)'
     },
     {
         id: 2,
         title: '회귀자 #042',
         rarity: 'epic',
         price: '0.3 ETH',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        gradient: 'linear-gradient(135deg, #7eb8da 0%, #a8cce0 100%)'
     },
     {
         id: 3,
         title: '별소녀 #128',
         rarity: 'rare',
         price: '0.1 ETH',
-        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+        gradient: 'linear-gradient(135deg, #6a9fc4 0%, #d1d5db 100%)'
     },
     {
         id: 4,
         title: '던전마스터 #007',
         rarity: 'legendary',
         price: '0.8 ETH',
-        gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+        gradient: 'linear-gradient(135deg, #8fb8d4 0%, #e2e8f0 100%)'
     }
 ];
 
@@ -255,7 +255,7 @@ const exhibitionData = [
         date: '2025.03.01 - 04.30',
         location: '서울 DDP',
         badge: '진행중',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        gradient: 'linear-gradient(135deg, #5a9bc4 0%, #7eb8da 100%)'
     },
     {
         id: 2,
@@ -264,7 +264,7 @@ const exhibitionData = [
         date: '2025.05.15 - 07.15',
         location: '부산 벡스코',
         badge: '예정',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        gradient: 'linear-gradient(135deg, #7eb8da 0%, #a8cce0 100%)'
     },
     {
         id: 3,
@@ -273,7 +273,7 @@ const exhibitionData = [
         date: '2025.06.01 - 08.31',
         location: '제주 아트센터',
         badge: '예정',
-        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+        gradient: 'linear-gradient(135deg, #6a9fc4 0%, #d1d5db 100%)'
     }
 ];
 
@@ -286,7 +286,7 @@ const performanceData = [
         date: '2025.04.10 - 06.30',
         location: '블루스퀘어 신한카드홀',
         time: '평일 19:30 / 주말 14:00, 19:00',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        gradient: 'linear-gradient(135deg, #5a9bc4 0%, #7eb8da 100%)'
     },
     {
         id: 2,
@@ -296,7 +296,7 @@ const performanceData = [
         date: '2025.05.01 - 05.31',
         location: '대학로 아트원씨어터',
         time: '화-금 19:30 / 토-일 15:00, 19:00',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        gradient: 'linear-gradient(135deg, #7eb8da 0%, #a8cce0 100%)'
     },
     {
         id: 3,
@@ -306,7 +306,7 @@ const performanceData = [
         date: '2025.07.20',
         location: '예술의전당 콘서트홀',
         time: '19:00',
-        gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+        gradient: 'linear-gradient(135deg, #a8cce0 0%, #e2e8f0 100%)'
     }
 ];
 
@@ -472,7 +472,7 @@ function initParticles() {
     const container = document.getElementById('particles');
     if (!container) return;
 
-    const colors = ['#6c5ce7', '#a29bfe', '#fd79a8', '#00cec9', '#81ecec'];
+    const colors = ['#7eb8da', '#a8cce0', '#d1d5db', '#5a9bc4', '#e2e8f0'];
     const particleCount = window.innerWidth < 768 ? 30 : 60;
 
     for (let i = 0; i < particleCount; i++) {

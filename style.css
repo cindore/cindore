@@ -123,7 +123,7 @@ body {
 }
 
 .btn-primary:hover, .btn-secondary:hover {
-    box-shadow: 0 10px 40px rgba(108, 92, 231, 0.4);
+    box-shadow: 0 10px 40px rgba(126, 184, 218, 0.4);
 }
 
 /* Button Glow on Hover */
@@ -174,7 +174,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at var(--glow-x) var(--glow-y), rgba(108, 92, 231, 0.15), transparent 50%);
+    background: radial-gradient(circle at var(--glow-x) var(--glow-y), rgba(126, 184, 218, 0.15), transparent 50%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -192,7 +192,7 @@ body {
 }
 
 .track-item:hover {
-    background: rgba(108, 92, 231, 0.1);
+    background: rgba(126, 184, 218, 0.1);
     transform: translateX(5px);
 }
 
@@ -311,7 +311,7 @@ body {
     left: var(--glow-x, 50%);
     width: 150px;
     height: 150px;
-    background: radial-gradient(circle, rgba(108, 92, 231, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(126, 184, 218, 0.3) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -452,8 +452,8 @@ body {
 }
 
 @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(108, 92, 231, 0.5); }
-    50% { box-shadow: 0 0 40px rgba(108, 92, 231, 0.8); }
+    0%, 100% { box-shadow: 0 0 20px rgba(126, 184, 218, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(126, 184, 218, 0.8); }
 }
 
 .logo-text {
@@ -489,7 +489,7 @@ body {
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -4px;
     left: 0;
     width: 0;
     height: 2px;
@@ -547,7 +547,7 @@ body {
 
 .btn-login:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(108, 92, 231, 0.4);
+    box-shadow: 0 5px 20px rgba(126, 184, 218, 0.4);
 }
 
 /* Mobile Menu */
@@ -709,7 +709,7 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
+    box-shadow: 0 10px 30px rgba(126, 184, 218, 0.4);
 }
 
 .btn-secondary {
@@ -786,7 +786,7 @@ body {
 
 .card-float:hover {
     transform: translateY(-10px) scale(1.05) rotateY(5deg);
-    box-shadow: 0 30px 60px rgba(108, 92, 231, 0.3);
+    box-shadow: 0 30px 60px rgba(126, 184, 218, 0.3);
 }
 
 .card-cover {
@@ -795,9 +795,9 @@ body {
     opacity: 0.8;
 }
 
-.card-1 .card-cover { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-.card-2 .card-cover { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-.card-3 .card-cover { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.card-1 .card-cover { background: linear-gradient(135deg, #5a9bc4 0%, #7eb8da 100%); }
+.card-2 .card-cover { background: linear-gradient(135deg, #7eb8da 0%, #a8cce0 100%); }
+.card-3 .card-cover { background: linear-gradient(135deg, #6a9fc4 0%, #d1d5db 100%); }
 
 .card-info {
     padding: 15px;
@@ -866,7 +866,7 @@ body {
 .feature-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary);
-    box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
+    box-shadow: 0 20px 40px rgba(126, 184, 218, 0.2);
 }
 
 .feature-card:hover::before {
@@ -1159,7 +1159,7 @@ body {
     transform: translateX(-50%);
     width: 60%;
     height: 25px;
-    background: radial-gradient(ellipse, rgba(108, 92, 231, 0.2) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(126, 184, 218, 0.2) 0%, transparent 70%);
     filter: blur(10px);
     pointer-events: none;
     z-index: 1;
@@ -1175,7 +1175,7 @@ body {
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.1),
         0 15px 50px rgba(0, 0, 0, 0.8),
-        0 0 80px rgba(108, 92, 231, 0.15);
+        0 0 80px rgba(126, 184, 218, 0.15);
 }
 
 .video-thumbnail {
@@ -1367,13 +1367,13 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.5); }
-    50% { transform: scale(1.05); box-shadow: 0 0 30px 10px rgba(108, 92, 231, 0); }
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(126, 184, 218, 0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 0 30px 10px rgba(126, 184, 218, 0); }
 }
 
 .play-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.5);
+    box-shadow: 0 10px 30px rgba(126, 184, 218, 0.5);
 }
 
 .video-info {
@@ -1513,11 +1513,11 @@ body {
 
 .new-animation {
     border-color: var(--accent);
-    background: rgba(253, 121, 168, 0.1);
+    background: rgba(126, 184, 218, 0.1);
 }
 
 .new-animation:hover {
-    background: rgba(253, 121, 168, 0.2);
+    background: rgba(126, 184, 218, 0.2);
 }
 
 .animation-details h4 {
@@ -1550,7 +1550,7 @@ body {
 
 .music-player:hover {
     border-color: var(--primary);
-    box-shadow: 0 20px 50px rgba(108, 92, 231, 0.2);
+    box-shadow: 0 20px 50px rgba(126, 184, 218, 0.2);
 }
 
 /* Spotify Player - Centered Large */
@@ -1802,7 +1802,7 @@ body {
 .track-item:hover,
 .track-item.active {
     border-color: var(--primary);
-    background: rgba(108, 92, 231, 0.1);
+    background: rgba(126, 184, 218, 0.1);
     transform: translateX(10px);
 }
 
@@ -1860,7 +1860,7 @@ body {
 .track-item:hover,
 .track-item.active {
     border-color: var(--primary);
-    background: rgba(108, 92, 231, 0.1);
+    background: rgba(126, 184, 218, 0.1);
     transform: translateX(10px);
 }
 
@@ -1892,11 +1892,11 @@ body {
 
 .new-track {
     border-color: var(--accent);
-    background: rgba(253, 121, 168, 0.1);
+    background: rgba(126, 184, 218, 0.1);
 }
 
 .new-track:hover {
-    background: rgba(253, 121, 168, 0.2);
+    background: rgba(126, 184, 218, 0.2);
 }
 
 .track-info {
@@ -2016,7 +2016,7 @@ body {
 .exhibition-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary);
-    box-shadow: 0 20px 50px rgba(108, 92, 231, 0.3);
+    box-shadow: 0 20px 50px rgba(126, 184, 218, 0.3);
 }
 
 .exhibition-image {
@@ -2093,7 +2093,7 @@ body {
 }
 
 .performance-card {
-    background: linear-gradient(145deg, var(--dark-light) 0%, rgba(108, 92, 231, 0.1) 100%);
+    background: linear-gradient(145deg, var(--dark-light) 0%, rgba(126, 184, 218, 0.1) 100%);
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--border);
@@ -2104,7 +2104,7 @@ body {
 .performance-card:hover {
     transform: translateY(-10px) scale(1.02);
     border-color: var(--secondary);
-    box-shadow: 0 25px 60px rgba(253, 121, 168, 0.2);
+    box-shadow: 0 25px 60px rgba(126, 184, 218, 0.2);
 }
 
 .performance-poster {
@@ -2185,7 +2185,7 @@ body {
 
 .btn-ticket:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
+    box-shadow: 0 10px 30px rgba(126, 184, 218, 0.4);
 }
 
 /* Subscription Section */
@@ -2265,12 +2265,12 @@ body {
 .plan-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary);
-    box-shadow: 0 20px 50px rgba(108, 92, 231, 0.2);
+    box-shadow: 0 20px 50px rgba(126, 184, 218, 0.2);
 }
 
 .plan-card.featured {
     border-color: var(--primary);
-    background: linear-gradient(180deg, rgba(108, 92, 231, 0.1) 0%, var(--dark-light) 100%);
+    background: linear-gradient(180deg, rgba(126, 184, 218, 0.1) 0%, var(--dark-light) 100%);
     transform: scale(1.05);
 }
 
@@ -2537,7 +2537,7 @@ body {
 .input-field:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 20px rgba(108, 92, 231, 0.2);
+    box-shadow: 0 0 20px rgba(126, 184, 218, 0.2);
 }
 
 .full-width {
@@ -2649,7 +2649,7 @@ body {
 
 .btn-wallet-large:hover {
     border-color: var(--primary);
-    background: rgba(108, 92, 231, 0.1);
+    background: rgba(126, 184, 218, 0.1);
     transform: translateY(-2px);
 }
 

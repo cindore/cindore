@@ -152,7 +152,7 @@ const musicData = [
         id: 1,
         title: 'Winter Strawberry Life',
         artist: '로사멜시(Rosa Melsy) OST',
-        duration: '3:30',
+        duration: '4:13',
         gradient: 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)',
         audioSrc: '/Winter Strawberry Life_orchestra ver..wav',
         isNew: true

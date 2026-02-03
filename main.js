@@ -97,7 +97,7 @@ const animationsData = [
     {
         id: 1,
         title: 'LOVER (2024)',
-        episode: 'Cindore의 첫 오리지널 작품',
+        episode: 'Cindore의 첫 오리지널',
         duration: '3:30',
         gradient: 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)',
         youtubeId: 'nHPXmV8SZTw',

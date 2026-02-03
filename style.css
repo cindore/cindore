@@ -1001,12 +1001,12 @@ body {
 .animation-header {
     position: relative;
     z-index: 5;
-    padding: 30px 0 20px;
+    padding: 15px 0 10px;
     text-align: center;
 }
 
 .animation-header .section-title {
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .animation-header .section-subtitle {
@@ -1020,8 +1020,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 0 30px;
-    margin-bottom: 20px;
+    padding: 10px 0 20px;
+    margin-bottom: 10px;
     background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
@@ -1182,8 +1182,8 @@ body {
     z-index: 1;
     height: 30vh;
     padding: 0 7.5%;
-    padding-top: 30px;
-    margin-top: 20px;
+    padding-top: 15px;
+    margin-top: 0;
     overflow: hidden;
     background: linear-gradient(180deg, rgba(10, 10, 15, 0.95) 0%, var(--dark) 100%);
     border-top: 1px solid rgba(255, 255, 255, 0.05);

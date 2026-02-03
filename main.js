@@ -1,5 +1,5 @@
 // Cindore - Premium Novel Platform
-// Web2 & Web3 Integration with Interactive Features
+// Immersive Web Experience with Interactive Features
 
 // ==================== Data ====================
 const novelsData = [
@@ -10,9 +10,11 @@ const novelsData = [
         genre: 'fantasy',
         rating: 4.9,
         chapters: 342,
+        views: '2.3M',
         status: '연재중',
         tags: ['판타지', '무협'],
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        description: '달빛이 비추는 밤, 검은 노래한다.'
     },
     {
         id: 2,
@@ -21,9 +23,11 @@ const novelsData = [
         genre: 'fantasy',
         rating: 4.8,
         chapters: 520,
+        views: '5.1M',
         status: '완결',
         tags: ['현대판타지', '회귀'],
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        description: '10년 후의 기억을 가진 채 돌아왔다.'
     },
     {
         id: 3,
@@ -32,9 +36,11 @@ const novelsData = [
         genre: 'romance',
         rating: 4.7,
         chapters: 156,
+        views: '1.8M',
         status: '연재중',
         tags: ['로맨스', '힐링'],
-        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        description: '그녀는 밤하늘의 별이 되었다.'
     },
     {
         id: 4,
@@ -43,9 +49,11 @@ const novelsData = [
         genre: 'action',
         rating: 4.9,
         chapters: 890,
+        views: '8.7M',
         status: '연재중',
         tags: ['액션', '던전'],
-        gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+        gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+        description: '세계에서 가장 깊은 던전의 주인이 되다.'
     },
     {
         id: 5,
@@ -54,9 +62,11 @@ const novelsData = [
         genre: 'mystery',
         rating: 4.6,
         chapters: 234,
+        views: '1.2M',
         status: '연재중',
         tags: ['미스터리', '추리'],
-        gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+        gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+        description: '그림자 속에 숨겨진 진실을 찾아서.'
     },
     {
         id: 6,
@@ -65,9 +75,11 @@ const novelsData = [
         genre: 'fantasy',
         rating: 4.8,
         chapters: 445,
+        views: '3.4M',
         status: '연재중',
         tags: ['판타지', '학원'],
-        gradient: 'linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)'
+        gradient: 'linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)',
+        description: '재능 없는 자의 마법이 시작된다.'
     },
     {
         id: 7,
@@ -76,9 +88,11 @@ const novelsData = [
         genre: 'romance',
         rating: 4.7,
         chapters: 312,
+        views: '4.2M',
         status: '완결',
         tags: ['현대', '로맨스'],
-        gradient: 'linear-gradient(135deg, #c3cfe2 0%, #c3cfe2 100%)'
+        gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+        description: '모든 것을 가진 남자의 사랑 이야기.'
     },
     {
         id: 8,
@@ -87,9 +101,11 @@ const novelsData = [
         genre: 'action',
         rating: 4.9,
         chapters: 678,
+        views: '6.5M',
         status: '연재중',
         tags: ['무협', '액션'],
-        gradient: 'linear-gradient(135deg, #f5af19 0%, #f12711 100%)'
+        gradient: 'linear-gradient(135deg, #f5af19 0%, #f12711 100%)',
+        description: '천하제일의 무공을 향한 여정.'
     }
 ];
 
@@ -97,65 +113,63 @@ const animationsData = [
     {
         id: 1,
         title: 'LOVER (2024)',
-        episode: 'Cindore의 첫 오리지널',
+        episode: 'Cindore 오리지널 애니메이션',
         duration: '12:40',
         gradient: 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)',
         youtubeId: 'nHPXmV8SZTw',
-        isNew: true
+        isNew: true,
+        views: '1.2M'
     },
     {
         id: 2,
         title: '달빛 아래 검의 노래',
         episode: 'EP.1 - 운명의 시작',
         duration: '24:30',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        views: '890K'
     },
     {
         id: 3,
         title: '달빛 아래 검의 노래',
         episode: 'EP.2 - 첫 번째 시련',
         duration: '23:45',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        views: '756K'
     },
     {
         id: 4,
         title: '회귀자의 세계정복',
         episode: 'EP.1 - 돌아온 자',
         duration: '25:00',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        views: '1.5M'
     },
     {
         id: 5,
         title: '회귀자의 세계정복',
         episode: 'EP.2 - 새로운 시작',
         duration: '24:15',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        views: '1.2M'
     },
     {
         id: 6,
         title: '별이 된 소녀',
         episode: 'EP.1 - 별빛 아래서',
         duration: '22:30',
-        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
-    },
-    {
-        id: 7,
-        title: '던전의 지배자',
-        episode: 'EP.1 - 각성',
-        duration: '24:00',
-        gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        views: '680K'
     }
 ];
 
 const musicData = [
     {
         id: 1,
-        title: 'Winter Strawberry Life - Piano Solo',
-        artist: '로사멜시(Rosa Melsy) OST • 2025 • 3:24',
-        duration: '3:24',
-        gradient: 'linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%)',
-        coverImage: 'https://i.scdn.co/image/ab67616d0000b273a048415f5094ab4bffc31658',
-        spotifyId: '3phDz67JfTXoNwTwRPT5UX',
+        title: 'Moonlit Serenade',
+        artist: '달빛 아래 검의 노래 OST',
+        duration: '3:45',
+        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        coverImage: null,
         isNew: true
     },
     {
@@ -174,14 +188,14 @@ const musicData = [
     },
     {
         id: 4,
-        title: 'Dungeon Master',
+        title: 'Dungeon Conquest',
         artist: '던전의 지배자 OST',
         duration: '4:05',
         gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
     },
     {
         id: 5,
-        title: 'Shadow Detective',
+        title: 'Shadow Mystery',
         artist: '그림자 탐정사무소 OST',
         duration: '3:52',
         gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
@@ -192,20 +206,6 @@ const musicData = [
         artist: '마법학교의 낙오생 OST',
         duration: '3:38',
         gradient: 'linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)'
-    },
-    {
-        id: 7,
-        title: 'Golden Dreams',
-        artist: '재벌가의 막내아들 OST',
-        duration: '4:20',
-        gradient: 'linear-gradient(135deg, #c3cfe2 0%, #f5f7fa 100%)'
-    },
-    {
-        id: 8,
-        title: 'Martial Arts Legend',
-        artist: '무림의 절대고수 OST',
-        duration: '3:55',
-        gradient: 'linear-gradient(135deg, #f5af19 0%, #f12711 100%)'
     }
 ];
 
@@ -250,7 +250,8 @@ let isPlaying = false;
 let selectedPlan = null;
 let bgMusicPlaying = false;
 let bgAudio = null;
-let trackAudio = null;
+let mouseX = 0, mouseY = 0;
+let targetX = 0, targetY = 0;
 
 const planPrices = {
     basic: { web2: '9,900원/월', web3: '0.005 ETH/월' },
@@ -260,6 +261,9 @@ const planPrices = {
 
 // ==================== Initialization ====================
 document.addEventListener('DOMContentLoaded', () => {
+    initCustomCursor();
+    initParticles();
+    initMagneticButtons();
     initNavigation();
     initModals();
     initPaymentToggle();
@@ -270,12 +274,19 @@ document.addEventListener('DOMContentLoaded', () => {
     initMusicPlayer();
     initFilterButtons();
     initLoginTabs();
-    initCustomCursor();
-    initParticles();
     initMobileMenu();
     initBackgroundMusic();
     initScrollAnimations();
     initTiltEffect();
+    initRippleEffect();
+    initParallaxBackground();
+    initTypingEffect();
+    initCounterAnimation();
+
+    // Start animations after small delay
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 100);
 });
 
 // ==================== Custom Cursor ====================
@@ -289,29 +300,29 @@ function initCustomCursor() {
     if ('ontouchstart' in window) {
         cursor.style.display = 'none';
         follower.style.display = 'none';
+        document.body.style.cursor = 'auto';
         return;
     }
 
-    let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
     let followerX = 0, followerY = 0;
 
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        targetX = e.clientX;
+        targetY = e.clientY;
     });
 
-    // Smooth cursor animation
+    // Smooth cursor animation with RAF
     function animateCursor() {
-        // Cursor follows immediately
-        cursorX += (mouseX - cursorX) * 0.2;
-        cursorY += (mouseY - cursorY) * 0.2;
+        cursorX += (mouseX - cursorX) * 0.15;
+        cursorY += (mouseY - cursorY) * 0.15;
         cursor.style.left = cursorX + 'px';
         cursor.style.top = cursorY + 'px';
 
-        // Follower has delay
-        followerX += (mouseX - followerX) * 0.1;
-        followerY += (mouseY - followerY) * 0.1;
+        followerX += (mouseX - followerX) * 0.08;
+        followerY += (mouseY - followerY) * 0.08;
         follower.style.left = followerX + 'px';
         follower.style.top = followerY + 'px';
 
@@ -320,7 +331,7 @@ function initCustomCursor() {
     animateCursor();
 
     // Cursor effects on interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .novel-card, .feature-card, .plan-card, .nft-card, .track-item, .animation-item');
+    const interactiveElements = document.querySelectorAll('a, button, .novel-card, .feature-card, .plan-card, .nft-card, .track-item, .animation-item, .filter-btn, input, .card-float');
 
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
@@ -334,24 +345,49 @@ function initCustomCursor() {
     });
 
     // Mouse trail effect
-    document.addEventListener('mousemove', createTrail);
+    let lastTrailTime = 0;
+    document.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastTrailTime < 50) return;
+        lastTrailTime = now;
+        createTrail(e.clientX, e.clientY);
+    });
 }
 
-let trailCount = 0;
-function createTrail(e) {
-    trailCount++;
-    if (trailCount % 3 !== 0) return; // Throttle
-
+function createTrail(x, y) {
     const trail = document.createElement('div');
     trail.className = 'trail';
-    trail.style.left = e.clientX + 'px';
-    trail.style.top = e.clientY + 'px';
+    trail.style.left = x + 'px';
+    trail.style.top = y + 'px';
+    trail.style.width = (Math.random() * 8 + 4) + 'px';
+    trail.style.height = trail.style.width;
     document.body.appendChild(trail);
 
-    setTimeout(() => {
+    requestAnimationFrame(() => {
         trail.style.opacity = '0';
-        setTimeout(() => trail.remove(), 500);
-    }, 100);
+        trail.style.transform = 'scale(0)';
+    });
+
+    setTimeout(() => trail.remove(), 600);
+}
+
+// ==================== Magnetic Buttons ====================
+function initMagneticButtons() {
+    const magneticElements = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-login, .btn-wallet, .control-btn, .play-button-large');
+
+    magneticElements.forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = '';
+        });
+    });
 }
 
 // ==================== Particles Background ====================
@@ -359,24 +395,126 @@ function initParticles() {
     const container = document.getElementById('particles');
     if (!container) return;
 
-    const colors = ['#6c5ce7', '#a29bfe', '#fd79a8', '#00cec9'];
-    const particleCount = window.innerWidth < 768 ? 20 : 50;
+    const colors = ['#6c5ce7', '#a29bfe', '#fd79a8', '#00cec9', '#81ecec'];
+    const particleCount = window.innerWidth < 768 ? 30 : 60;
 
     for (let i = 0; i < particleCount; i++) {
         createParticle(container, colors);
     }
+
+    // Interactive particles that follow mouse
+    document.addEventListener('mousemove', (e) => {
+        if (Math.random() > 0.95) {
+            createInteractiveParticle(e.clientX, e.clientY, colors);
+        }
+    });
 }
 
 function createParticle(container, colors) {
     const particle = document.createElement('div');
     particle.className = 'particle';
     particle.style.left = Math.random() * 100 + '%';
-    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+    particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
     particle.style.animationDelay = Math.random() * 10 + 's';
     particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-    particle.style.width = (Math.random() * 4 + 2) + 'px';
-    particle.style.height = particle.style.width;
+    const size = Math.random() * 6 + 2;
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
     container.appendChild(particle);
+}
+
+function createInteractiveParticle(x, y, colors) {
+    const particle = document.createElement('div');
+    particle.className = 'interactive-particle';
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    document.body.appendChild(particle);
+
+    setTimeout(() => particle.remove(), 1000);
+}
+
+// ==================== Parallax Background ====================
+function initParallaxBackground() {
+    const heroSection = document.querySelector('.hero');
+    if (!heroSection) return;
+
+    document.addEventListener('mousemove', (e) => {
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+
+        const cards = document.querySelectorAll('.card-float');
+        cards.forEach((card, i) => {
+            const depth = (i + 1) * 0.5;
+            card.style.transform = `translate(${moveX * depth}px, ${moveY * depth}px)`;
+        });
+    });
+}
+
+// ==================== Ripple Effect ====================
+function initRippleEffect() {
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-subscribe, .filter-btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+
+            this.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+}
+
+// ==================== Typing Effect ====================
+function initTypingEffect() {
+    const titles = document.querySelectorAll('.hero-title');
+    titles.forEach(title => {
+        title.classList.add('typing-ready');
+    });
+}
+
+// ==================== Counter Animation ====================
+function initCounterAnimation() {
+    const counters = document.querySelectorAll('.stat-number');
+
+    const observerOptions = {
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+function animateCounter(element) {
+    const text = element.textContent;
+    const hasPlus = text.includes('+');
+    const numericValue = parseInt(text.replace(/[^0-9]/g, ''));
+
+    let current = 0;
+    const increment = numericValue / 50;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= numericValue) {
+            current = numericValue;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current).toLocaleString() + (hasPlus ? '+' : '');
+    }, 30);
 }
 
 // ==================== Mobile Menu ====================
@@ -389,24 +527,29 @@ function initMobileMenu() {
 
 function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
+    const icon = document.querySelector('.mobile-menu-btn i');
     menu.classList.toggle('active');
+
+    if (menu.classList.contains('active')) {
+        icon.className = 'fas fa-times';
+    } else {
+        icon.className = 'fas fa-bars';
+    }
 }
 
 function closeMobileMenu() {
     const menu = document.getElementById('mobileMenu');
+    const icon = document.querySelector('.mobile-menu-btn i');
     menu.classList.remove('active');
+    icon.className = 'fas fa-bars';
 }
 
 // ==================== Background Music ====================
 function initBackgroundMusic() {
-    // Create audio context for orchestra music
     bgAudio = new Audio();
-    // Royalty-free orchestra music
     bgAudio.src = 'https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3';
     bgAudio.loop = true;
-    bgAudio.volume = 0.3;
-
-    // Preload
+    bgAudio.volume = 0.2;
     bgAudio.load();
 }
 
@@ -422,8 +565,7 @@ function toggleBgMusic() {
             control.classList.remove('paused');
             bgMusicPlaying = true;
         }).catch(err => {
-            console.log('Audio autoplay blocked:', err);
-            showToast('클릭하여 음악을 재생하세요');
+            showToast('클릭하여 배경음악을 재생하세요');
         });
     }
 }
@@ -436,26 +578,24 @@ function initScrollAnimations() {
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                setTimeout(() => {
+                    entry.target.classList.add('animate-in');
+                }, index * 50);
             }
         });
     }, observerOptions);
 
-    // Observe elements for scroll animation
     document.querySelectorAll('.novel-card, .feature-card, .plan-card, .nft-card, .animation-item, .track-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.classList.add('animate-ready');
         observer.observe(el);
     });
 }
 
 // ==================== Tilt Effect ====================
 function initTiltEffect() {
-    const cards = document.querySelectorAll('.card-float, .novel-card, .nft-card');
+    const cards = document.querySelectorAll('.novel-card, .nft-card, .feature-card');
 
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -466,10 +606,16 @@ function initTiltEffect() {
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
+            const rotateX = (y - centerY) / 15;
+            const rotateY = (centerX - x) / 15;
 
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+
+            // Update glow position
+            const glowX = (x / rect.width) * 100;
+            const glowY = (y / rect.height) * 100;
+            card.style.setProperty('--glow-x', glowX + '%');
+            card.style.setProperty('--glow-y', glowY + '%');
         });
 
         card.addEventListener('mouseleave', () => {
@@ -480,7 +626,6 @@ function initTiltEffect() {
 
 // ==================== Navigation ====================
 function initNavigation() {
-    // Nav links
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -490,18 +635,15 @@ function initNavigation() {
         });
     });
 
-    // Logo click
-    document.querySelector('.logo').addEventListener('click', () => {
+    document.querySelector('.logo')?.addEventListener('click', () => {
         showSection('home');
     });
 
-    // Login button
-    document.getElementById('loginBtn').addEventListener('click', () => {
+    document.getElementById('loginBtn')?.addEventListener('click', () => {
         openModal('loginModal');
     });
 
-    // Wallet button
-    document.getElementById('walletBtn').addEventListener('click', () => {
+    document.getElementById('walletBtn')?.addEventListener('click', () => {
         if (walletConnected) {
             disconnectWallet();
         } else {
@@ -511,13 +653,23 @@ function initNavigation() {
 }
 
 function showSection(sectionId) {
-    // Update sections
-    document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-    });
-    document.getElementById(sectionId).classList.add('active');
+    const currentActive = document.querySelector('.section.active');
+    const newSection = document.getElementById(sectionId);
 
-    // Update nav links
+    if (currentActive) {
+        currentActive.classList.add('fade-out');
+        setTimeout(() => {
+            currentActive.classList.remove('active', 'fade-out');
+            newSection.classList.add('active');
+
+            // Re-init animations for new section
+            setTimeout(initScrollAnimations, 100);
+            setTimeout(initTiltEffect, 100);
+        }, 300);
+    } else {
+        newSection.classList.add('active');
+    }
+
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
         if (link.dataset.section === sectionId) {
@@ -527,14 +679,10 @@ function showSection(sectionId) {
 
     currentSection = sectionId;
     window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Re-init scroll animations for new section
-    setTimeout(initScrollAnimations, 100);
 }
 
 // ==================== Modals ====================
 function initModals() {
-    // Close modal on outside click
     document.querySelectorAll('.modal').forEach(modal => {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
@@ -543,7 +691,6 @@ function initModals() {
         });
     });
 
-    // Close on escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             document.querySelectorAll('.modal.active').forEach(modal => {
@@ -554,11 +701,15 @@ function initModals() {
 }
 
 function openModal(modalId) {
-    document.getElementById(modalId).classList.add('active');
+    const modal = document.getElementById(modalId);
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
 function closeModal(modalId) {
-    document.getElementById(modalId).classList.remove('active');
+    const modal = document.getElementById(modalId);
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
 }
 
 // ==================== Login Tabs ====================
@@ -587,7 +738,7 @@ function showSignup() {
 // ==================== Payment Toggle ====================
 function initPaymentToggle() {
     const toggle = document.getElementById('paymentToggle');
-    toggle.addEventListener('change', () => {
+    toggle?.addEventListener('change', () => {
         isWeb3Mode = toggle.checked;
         updatePriceDisplay();
     });
@@ -605,14 +756,20 @@ function updatePriceDisplay() {
 // ==================== Novels ====================
 function renderNovels(filter = 'all') {
     const grid = document.getElementById('novelsGrid');
+    if (!grid) return;
+
     const filteredNovels = filter === 'all'
         ? novelsData
         : novelsData.filter(novel => novel.genre === filter);
 
     grid.innerHTML = filteredNovels.map((novel, index) => `
-        <div class="novel-card" onclick="openNovel(${novel.id})" style="animation-delay: ${index * 0.1}s">
+        <div class="novel-card animate-ready" onclick="openNovel(${novel.id})" style="--delay: ${index * 0.1}s">
             <div class="novel-cover" style="background: ${novel.gradient}">
                 <span class="novel-badge">${novel.status}</span>
+                <div class="novel-hover-info">
+                    <p>${novel.description}</p>
+                    <span class="view-count"><i class="fas fa-eye"></i> ${novel.views}</span>
+                </div>
             </div>
             <div class="novel-info">
                 <h3 class="novel-title">${novel.title}</h3>
@@ -630,8 +787,10 @@ function renderNovels(filter = 'all') {
         </div>
     `).join('');
 
-    // Re-init tilt effect for new cards
-    setTimeout(initTiltEffect, 100);
+    setTimeout(() => {
+        initTiltEffect();
+        initScrollAnimations();
+    }, 100);
 }
 
 function initFilterButtons() {
@@ -639,7 +798,17 @@ function initFilterButtons() {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            renderNovels(btn.dataset.filter);
+
+            // Add filter animation
+            const grid = document.getElementById('novelsGrid');
+            grid.style.opacity = '0';
+            grid.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+                renderNovels(btn.dataset.filter);
+                grid.style.opacity = '1';
+                grid.style.transform = 'translateY(0)';
+            }, 300);
         });
     });
 }
@@ -657,63 +826,39 @@ function openNovel(id) {
 function generateSampleContent(novel) {
     return `
         <h2>제 1장: 시작</h2>
-        <p>"${novel.title}"의 첫 번째 장입니다.</p>
+        <p class="chapter-intro">${novel.description}</p>
+        <br>
         <p>어둠이 짙게 깔린 밤, 달빛만이 유일한 빛이었다. 그 빛 아래서 한 사람의 그림자가 길게 드리워졌다.</p>
         <p>바람이 불어왔다. 차갑고 날카로운 바람이었다. 하지만 그는 움직이지 않았다. 아니, 움직일 수 없었다.</p>
         <p>오래전 잊혀진 기억들이 하나둘 떠올랐다. 그것은 마치 오래된 책장에서 먼지를 털어내는 것과 같았다.</p>
         <p>"때가 되었군..."</p>
         <p>낮고 깊은 목소리가 고요한 밤공기를 갈랐다. 그리고 그 순간, 모든 것이 시작되었다.</p>
         <br>
-        <p>계속해서 읽으시려면 구독이 필요합니다.</p>
+        <p class="premium-notice"><i class="fas fa-crown"></i> 계속 읽으시려면 구독이 필요합니다.</p>
     `;
 }
 
 // ==================== Animations ====================
 function renderAnimations() {
     const list = document.getElementById('animationList');
+    if (!list) return;
+
     list.innerHTML = animationsData.map((anim, index) => `
-        <div class="animation-item ${anim.isNew ? 'new-animation' : ''}" onclick="playAnimation(${anim.id})" style="animation-delay: ${index * 0.1}s">
+        <div class="animation-item ${anim.isNew ? 'new-animation' : ''} animate-ready" onclick="playAnimation(${anim.id})" style="--delay: ${index * 0.1}s">
             <div class="animation-thumb" style="${anim.youtubeId ? `background-image: url('https://img.youtube.com/vi/${anim.youtubeId}/mqdefault.jpg'); background-size: cover; background-position: center;` : `background: ${anim.gradient}`}">
                 ${anim.isNew ? '<span class="thumb-badge">NEW</span>' : ''}
+                <div class="thumb-play"><i class="fas fa-play"></i></div>
             </div>
             <div class="animation-details">
                 <h4>${anim.title}</h4>
                 <p>${anim.episode}</p>
-                <span class="animation-duration">${anim.duration}</span>
+                <div class="animation-meta">
+                    <span class="animation-duration"><i class="fas fa-clock"></i> ${anim.duration}</span>
+                    ${anim.views ? `<span class="animation-views"><i class="fas fa-eye"></i> ${anim.views}</span>` : ''}
+                </div>
             </div>
         </div>
     `).join('');
-
-    // 첫 번째 애니메이션(YouTube 영상)을 메인 플레이어에 로드
-    const firstAnim = animationsData[0];
-    if (firstAnim && firstAnim.youtubeId) {
-        updateMainPlayer(firstAnim);
-    }
-}
-
-function updateMainPlayer(anim) {
-    const videoPlayer = document.getElementById('videoPlayer');
-    if (anim.youtubeId) {
-        videoPlayer.innerHTML = `
-            <iframe
-                src="https://www.youtube.com/embed/${anim.youtubeId}?rel=0"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-                style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border-radius: 20px;">
-            </iframe>
-        `;
-    } else {
-        videoPlayer.innerHTML = `
-            <div class="play-button" onclick="playAnimation(${anim.id})">
-                <i class="fas fa-play"></i>
-            </div>
-            <div class="video-info">
-                <span class="video-badge">${anim.isNew ? 'NEW' : ''}</span>
-                <h3>${anim.title} ${anim.episode}</h3>
-            </div>
-        `;
-    }
 }
 
 function playAnimation(id) {
@@ -721,9 +866,20 @@ function playAnimation(id) {
     if (!anim) return;
 
     if (anim.youtubeId) {
-        updateMainPlayer(anim);
-        // 애니메이션 섹션으로 스크롤
-        document.querySelector('.animation-featured').scrollIntoView({ behavior: 'smooth' });
+        // Update main video player
+        const thumbnail = document.getElementById('videoThumbnail');
+        const playOverlay = document.querySelector('.play-overlay');
+        const videoContainer = document.getElementById('videoContainer');
+        const youtubePlayer = document.getElementById('youtubePlayer');
+
+        if (thumbnail) thumbnail.style.display = 'none';
+        if (playOverlay) playOverlay.style.display = 'none';
+        if (videoContainer) {
+            videoContainer.style.display = 'block';
+            youtubePlayer.src = `https://www.youtube.com/embed/${anim.youtubeId}?autoplay=1&rel=0&modestbranding=1`;
+        }
+
+        document.querySelector('.animation-main')?.scrollIntoView({ behavior: 'smooth' });
         showToast(`"${anim.title}" 재생 중`);
     } else {
         showToast('애니메이션을 재생합니다 (구독 필요)');
@@ -736,14 +892,17 @@ function renderPlaylist() {
     if (!playlist) return;
 
     playlist.innerHTML = musicData.map((track, index) => `
-        <div class="track-item ${index === currentTrack ? 'active' : ''}" onclick="selectTrack(${index})" style="animation-delay: ${index * 0.05}s">
-            <span class="track-number">${index + 1}</span>
-            <div class="track-thumb" style="${track.coverImage ? `background-image: url('${track.coverImage}'); background-size: cover; background-position: center;` : `background: ${track.gradient}`}"></div>
+        <div class="track-item ${index === currentTrack ? 'active' : ''} ${track.isNew ? 'new-track' : ''} animate-ready" onclick="selectTrack(${index})" style="--delay: ${index * 0.05}s">
+            <span class="track-number">${String(index + 1).padStart(2, '0')}</span>
+            <div class="track-thumb" style="${track.coverImage ? `background-image: url('${track.coverImage}'); background-size: cover;` : `background: ${track.gradient}`}">
+                ${track.isNew ? '<span class="track-badge">NEW</span>' : ''}
+            </div>
             <div class="track-info">
                 <h4>${track.title}</h4>
                 <p>${track.artist}</p>
             </div>
             <span class="track-duration">${track.duration}</span>
+            <div class="track-play-icon"><i class="fas fa-play"></i></div>
         </div>
     `).join('');
 }
@@ -754,17 +913,15 @@ function initMusicPlayer() {
     const nextBtn = document.getElementById('nextBtn');
     const progressBar = document.querySelector('.progress-bar');
 
-    if (playBtn) playBtn.addEventListener('click', togglePlay);
-    if (prevBtn) prevBtn.addEventListener('click', prevTrack);
-    if (nextBtn) nextBtn.addEventListener('click', nextTrack);
+    playBtn?.addEventListener('click', togglePlay);
+    prevBtn?.addEventListener('click', prevTrack);
+    nextBtn?.addEventListener('click', nextTrack);
 
-    if (progressBar) {
-        progressBar.addEventListener('click', (e) => {
-            const rect = e.target.getBoundingClientRect();
-            const percent = (e.clientX - rect.left) / rect.width * 100;
-            document.getElementById('progress').style.width = percent + '%';
-        });
-    }
+    progressBar?.addEventListener('click', (e) => {
+        const rect = e.target.getBoundingClientRect();
+        const percent = (e.clientX - rect.left) / rect.width * 100;
+        document.getElementById('progress').style.width = percent + '%';
+    });
 
     updatePlayerDisplay();
 }
@@ -773,75 +930,53 @@ function togglePlay() {
     isPlaying = !isPlaying;
     const playBtn = document.getElementById('playBtn');
     const albumArt = document.getElementById('albumArt');
-    const track = musicData[currentTrack];
 
     playBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
 
     if (isPlaying) {
-        albumArt.classList.add('playing');
-
-        // 실제 오디오 파일이 있는 경우 재생
-        if (track.audioSrc) {
-            if (!trackAudio || trackAudio.src !== window.location.origin + track.audioSrc) {
-                if (trackAudio) trackAudio.pause();
-                trackAudio = new Audio(track.audioSrc);
-                trackAudio.volume = 0.7;
-                trackAudio.addEventListener('timeupdate', updateProgress);
-                trackAudio.addEventListener('ended', nextTrack);
-            }
-            trackAudio.play().catch(err => console.log('Audio play error:', err));
-        } else {
-            simulatePlayback();
-        }
+        albumArt?.classList.add('playing');
+        simulatePlayback();
     } else {
-        albumArt.classList.remove('playing');
-        if (trackAudio) trackAudio.pause();
+        albumArt?.classList.remove('playing');
     }
-}
-
-function updateProgress() {
-    if (!trackAudio) return;
-    const progress = document.getElementById('progress');
-    const percent = (trackAudio.currentTime / trackAudio.duration) * 100;
-    progress.style.width = percent + '%';
-
-    // Update time display
-    const currentMins = Math.floor(trackAudio.currentTime / 60);
-    const currentSecs = Math.floor(trackAudio.currentTime % 60);
-    document.getElementById('currentTime').textContent =
-        `${currentMins}:${currentSecs.toString().padStart(2, '0')}`;
 }
 
 function simulatePlayback() {
     if (!isPlaying) return;
 
     const progress = document.getElementById('progress');
-    let width = parseFloat(progress.style.width) || 0;
+    let width = parseFloat(progress?.style.width) || 0;
 
     if (width >= 100) {
         nextTrack();
         return;
     }
 
-    progress.style.width = (width + 0.5) + '%';
+    if (progress) progress.style.width = (width + 0.5) + '%';
 
-    // Update time display
     const track = musicData[currentTrack];
     const [mins, secs] = track.duration.split(':').map(Number);
     const totalSecs = mins * 60 + secs;
     const currentSecs = Math.floor(totalSecs * width / 100);
     const currentMins = Math.floor(currentSecs / 60);
     const remainingSecs = currentSecs % 60;
-    document.getElementById('currentTime').textContent =
-        `${currentMins}:${remainingSecs.toString().padStart(2, '0')}`;
+
+    const currentTimeEl = document.getElementById('currentTime');
+    if (currentTimeEl) {
+        currentTimeEl.textContent = `${currentMins}:${remainingSecs.toString().padStart(2, '0')}`;
+    }
 
     setTimeout(simulatePlayback, 100);
 }
 
 function selectTrack(index) {
     currentTrack = index;
-    document.getElementById('progress').style.width = '0%';
-    document.getElementById('currentTime').textContent = '0:00';
+    const progress = document.getElementById('progress');
+    const currentTime = document.getElementById('currentTime');
+
+    if (progress) progress.style.width = '0%';
+    if (currentTime) currentTime.textContent = '0:00';
+
     updatePlayerDisplay();
     renderPlaylist();
 
@@ -851,30 +986,22 @@ function selectTrack(index) {
 }
 
 function prevTrack() {
-    if (trackAudio) {
-        trackAudio.pause();
-        trackAudio = null;
-    }
     currentTrack = (currentTrack - 1 + musicData.length) % musicData.length;
-    document.getElementById('progress').style.width = '0%';
-    document.getElementById('currentTime').textContent = '0:00';
-    updatePlayerDisplay();
-    renderPlaylist();
-
-    if (isPlaying) {
-        isPlaying = false;
-        togglePlay();
-    }
+    resetAndPlay();
 }
 
 function nextTrack() {
-    if (trackAudio) {
-        trackAudio.pause();
-        trackAudio = null;
-    }
     currentTrack = (currentTrack + 1) % musicData.length;
-    document.getElementById('progress').style.width = '0%';
-    document.getElementById('currentTime').textContent = '0:00';
+    resetAndPlay();
+}
+
+function resetAndPlay() {
+    const progress = document.getElementById('progress');
+    const currentTime = document.getElementById('currentTime');
+
+    if (progress) progress.style.width = '0%';
+    if (currentTime) currentTime.textContent = '0:00';
+
     updatePlayerDisplay();
     renderPlaylist();
 
@@ -886,42 +1013,40 @@ function nextTrack() {
 
 function updatePlayerDisplay() {
     const track = musicData[currentTrack];
-    document.getElementById('trackTitle').textContent = track.title;
-    document.getElementById('trackArtist').textContent = track.artist;
-    document.getElementById('totalTime').textContent = track.duration;
-
-    // 앨범 아트 설정 (이미지 또는 그라디언트)
+    const trackTitle = document.getElementById('trackTitle');
+    const trackArtist = document.getElementById('trackArtist');
+    const totalTime = document.getElementById('totalTime');
     const albumArt = document.getElementById('albumArt');
-    if (track.coverImage) {
-        albumArt.style.background = `url('${track.coverImage}') center/cover no-repeat`;
-    } else {
-        albumArt.style.background = track.gradient;
-    }
 
-    // Spotify 임베드 업데이트
-    const spotifyEmbed = document.getElementById('spotifyEmbed');
-    const spotifyPlayer = document.getElementById('spotifyPlayer');
-    if (track.spotifyId) {
-        spotifyPlayer.src = `https://open.spotify.com/embed/track/${track.spotifyId}?utm_source=generator&theme=0`;
-        spotifyEmbed.style.display = 'block';
-    } else {
-        spotifyEmbed.style.display = 'none';
+    if (trackTitle) trackTitle.textContent = track.title;
+    if (trackArtist) trackArtist.textContent = track.artist;
+    if (totalTime) totalTime.textContent = track.duration;
+
+    if (albumArt) {
+        if (track.coverImage) {
+            albumArt.style.background = `url('${track.coverImage}') center/cover no-repeat`;
+        } else {
+            albumArt.style.background = track.gradient;
+        }
     }
 }
 
 // ==================== NFTs ====================
 function renderNFTs() {
     const grid = document.getElementById('nftGrid');
+    if (!grid) return;
+
     grid.innerHTML = nftData.map((nft, index) => `
-        <div class="nft-card" onclick="viewNFT(${nft.id})" style="animation-delay: ${index * 0.1}s">
+        <div class="nft-card animate-ready" onclick="viewNFT(${nft.id})" style="--delay: ${index * 0.1}s">
             <div class="nft-image" style="background: ${nft.gradient}">
                 <span class="nft-rarity ${nft.rarity}">${nft.rarity.toUpperCase()}</span>
+                <div class="nft-shine"></div>
             </div>
             <div class="nft-details">
                 <h4 class="nft-title">${nft.title}</h4>
                 <div class="nft-price">
                     <span>현재가</span>
-                    <span>${nft.price}</span>
+                    <span><i class="fab fa-ethereum"></i> ${nft.price}</span>
                 </div>
             </div>
         </div>
@@ -942,13 +1067,21 @@ function subscribe(plan) {
     const planName = plan.charAt(0).toUpperCase() + plan.slice(1);
     const price = isWeb3Mode ? planPrices[plan].web3 : planPrices[plan].web2;
 
-    document.getElementById('selectedPlan').textContent = `${planName} 플랜`;
-    document.getElementById('selectedPrice').textContent = price;
-    document.getElementById('selectedPlanWeb3').textContent = `${planName} 플랜`;
-    document.getElementById('selectedPriceWeb3').textContent = price;
+    const selectedPlanEl = document.getElementById('selectedPlan');
+    const selectedPriceEl = document.getElementById('selectedPrice');
+    const selectedPlanWeb3El = document.getElementById('selectedPlanWeb3');
+    const selectedPriceWeb3El = document.getElementById('selectedPriceWeb3');
 
-    document.getElementById('web2Payment').style.display = isWeb3Mode ? 'none' : 'block';
-    document.getElementById('web3Payment').style.display = isWeb3Mode ? 'block' : 'none';
+    if (selectedPlanEl) selectedPlanEl.textContent = `${planName} 플랜`;
+    if (selectedPriceEl) selectedPriceEl.textContent = price;
+    if (selectedPlanWeb3El) selectedPlanWeb3El.textContent = `${planName} 플랜`;
+    if (selectedPriceWeb3El) selectedPriceWeb3El.textContent = price;
+
+    const web2Payment = document.getElementById('web2Payment');
+    const web3Payment = document.getElementById('web3Payment');
+
+    if (web2Payment) web2Payment.style.display = isWeb3Mode ? 'none' : 'block';
+    if (web3Payment) web3Payment.style.display = isWeb3Mode ? 'block' : 'none';
 
     openModal('paymentModal');
 }
@@ -957,7 +1090,7 @@ function processPayment() {
     showToast('결제가 처리 중입니다...');
     setTimeout(() => {
         closeModal('paymentModal');
-        showToast('구독이 완료되었습니다!');
+        showToast('구독이 완료되었습니다! 환영합니다!');
     }, 2000);
 }
 
@@ -975,11 +1108,9 @@ async function connectMetaMask() {
 
         walletAddress = accounts[0];
         walletConnected = true;
-
         updateWalletUI();
         showToast('지갑이 연결되었습니다!');
 
-        // Listen for account changes
         window.ethereum.on('accountsChanged', (accounts) => {
             if (accounts.length === 0) {
                 disconnectWallet();
@@ -990,14 +1121,12 @@ async function connectMetaMask() {
         });
 
     } catch (error) {
-        console.error('Wallet connection error:', error);
         showToast('지갑 연결에 실패했습니다');
     }
 }
 
 function connectWalletConnect() {
     showToast('WalletConnect 연결 중...');
-    // WalletConnect integration would go here
     setTimeout(() => {
         walletConnected = true;
         walletAddress = '0x1234...5678';
@@ -1017,19 +1146,15 @@ function updateWalletUI() {
     const walletBtn = document.getElementById('walletBtn');
     const connectedWalletSpan = document.getElementById('connectedWallet');
 
-    if (walletConnected) {
+    if (walletConnected && walletBtn) {
         const shortAddress = walletAddress.slice(0, 6) + '...' + walletAddress.slice(-4);
         walletBtn.innerHTML = `<i class="fab fa-ethereum"></i><span>${shortAddress}</span>`;
         walletBtn.classList.add('connected');
-        if (connectedWalletSpan) {
-            connectedWalletSpan.textContent = shortAddress;
-        }
-    } else {
+        if (connectedWalletSpan) connectedWalletSpan.textContent = shortAddress;
+    } else if (walletBtn) {
         walletBtn.innerHTML = '<i class="fab fa-ethereum"></i><span>지갑 연결</span>';
         walletBtn.classList.remove('connected');
-        if (connectedWalletSpan) {
-            connectedWalletSpan.textContent = '없음';
-        }
+        if (connectedWalletSpan) connectedWalletSpan.textContent = '없음';
     }
 }
 
@@ -1053,15 +1178,16 @@ function showToast(message) {
     const toast = document.getElementById('toast');
     const toastMessage = document.getElementById('toastMessage');
 
-    toastMessage.textContent = message;
-    toast.classList.add('show');
-
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, 3000);
+    if (toastMessage) toastMessage.textContent = message;
+    if (toast) {
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
 }
 
-// ==================== Expose functions to global scope ====================
+// ==================== Global Exports ====================
 window.showSection = showSection;
 window.openModal = openModal;
 window.closeModal = closeModal;

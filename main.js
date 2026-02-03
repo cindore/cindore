@@ -915,19 +915,11 @@ function renderPlaylist() {
 }
 
 function initMusicPlayer() {
-    const playBtn = document.getElementById('playBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const progressBar = document.querySelector('.progress-bar');
+    const spotifyWrapper = document.getElementById('spotifyWrapper');
 
-    playBtn?.addEventListener('click', togglePlay);
-    prevBtn?.addEventListener('click', prevTrack);
-    nextBtn?.addEventListener('click', nextTrack);
-
-    progressBar?.addEventListener('click', (e) => {
-        const rect = e.target.getBoundingClientRect();
-        const percent = (e.clientX - rect.left) / rect.width * 100;
-        document.getElementById('progress').style.width = percent + '%';
+    // Toggle playing state when clicking on Spotify player
+    spotifyWrapper?.addEventListener('click', () => {
+        spotifyWrapper.classList.toggle('playing');
     });
 
     updatePlayerDisplay();

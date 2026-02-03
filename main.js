@@ -268,6 +268,7 @@ const planPrices = {
 
 // ==================== Initialization ====================
 document.addEventListener('DOMContentLoaded', () => {
+    initCursorGlow();
     initParticles();
     initHoverEffects();
     initNavigation();
@@ -295,6 +296,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 });
 
+// ==================== Cursor Glow ====================
+function initCursorGlow() {
+    const cursorGlow = document.getElementById('cursorGlow');
+    if (!cursorGlow) return;
+
+    // Hide on touch devices
+    if ('ontouchstart' in window) {
+        cursorGlow.style.display = 'none';
+        return;
+    }
+
+    let cursorX = 0, cursorY = 0;
+    let targetX = 0, targetY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+    });
+
+    // Smooth animation
+    function animate() {
+        cursorX += (targetX - cursorX) * 0.15;
+        cursorY += (targetY - cursorY) * 0.15;
+        cursorGlow.style.left = cursorX + 'px';
+        cursorGlow.style.top = cursorY + 'px';
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Hover effect on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .novel-card, .plan-card, .nft-card, .track-item, .animation-item, input');
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursorGlow.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursorGlow.classList.remove('hover'));
+    });
+}
+
 // ==================== Hover Effects ====================
 function initHoverEffects() {
     // Smooth scale on cards
@@ -307,23 +346,6 @@ function initHoverEffects() {
 
         card.addEventListener('mouseleave', () => {
             card.style.transform = '';
-        });
-    });
-
-    // Button shine effect
-    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-login, .btn-wallet');
-
-    buttons.forEach(btn => {
-        btn.addEventListener('mouseenter', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            btn.style.setProperty('--shine-x', x + 'px');
-        });
-
-        btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            btn.style.setProperty('--shine-x', x + 'px');
         });
     });
 

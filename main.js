@@ -4,20 +4,6 @@
 // ==================== Data ====================
 const novelsData = [
     {
-        id: 100,
-        title: '로사멜시 (Rosa Melsy)',
-        author: 'Cindore',
-        genre: 'romance',
-        rating: 5.0,
-        chapters: 24,
-        views: 'NEW',
-        status: '1권 오픈',
-        tags: ['로맨스', '힐링', 'OST'],
-        gradient: 'linear-gradient(135deg, #e8b4bc 0%, #b8a4c9 50%, #7eb8da 100%)',
-        description: '겨울 딸기처럼 달콤하고, 피아노 선율처럼 아름다운 사계절 이야기',
-        featured: true
-    },
-    {
         id: 1,
         title: '달빛 아래 검의 노래',
         author: '검향',
@@ -183,11 +169,10 @@ const musicData = [
         artist: 'Shin Yeseo',
         subtitle: '로사멜시(Rosa Melsy) OST',
         duration: '3:24',
-        gradient: 'linear-gradient(135deg, #e8b4bc 0%, #b8a4c9 50%, #7eb8da 100%)',
+        gradient: 'linear-gradient(135deg, #7eb8da 0%, #d1d5db 100%)',
         coverImage: 'https://i.scdn.co/image/ab67616d00001e02c008f0fbd1b7aac61eee33d2',
         spotifyEmbed: 'https://open.spotify.com/embed/track/3phDz67JfTXoNwTwRPT5UX?utm_source=generator&theme=0',
-        isNew: true,
-        featured: true
+        isNew: true
     },
     {
         id: 2,
@@ -487,7 +472,7 @@ function initParticles() {
     const container = document.getElementById('particles');
     if (!container) return;
 
-    const colors = ['#7eb8da', '#b8a4c9', '#e8b4bc', '#a8d4d0', '#d4a574', '#9b8bb8', '#a8cce0'];
+    const colors = ['#7eb8da', '#a8cce0', '#d1d5db', '#5a9bc4', '#e2e8f0'];
     const particleCount = window.innerWidth < 768 ? 30 : 60;
 
     for (let i = 0; i < particleCount; i++) {

@@ -71,105 +71,91 @@
     <main class="main-content">
         <!-- Home Section -->
         <section id="home" class="section home-section active">
-            <!-- Rosa Melsy Featured Banner -->
-            <div class="featured-ip-banner">
-                <div class="featured-glow"></div>
-                <div class="featured-content">
-                    <div class="featured-badge">
-                        <span class="badge-new">NEW</span>
-                        <span class="badge-text">Cindore 첫 IP 오픈</span>
-                    </div>
-                    <h1 class="featured-title">
-                        <span class="title-korean">로사멜시</span>
-                        <span class="title-english">Rosa Melsy</span>
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge">Web2 & Web3 Premium Platform</div>
+                    <h1 class="hero-title">
+                        상상을 현실로,<br>
+                        <span class="gradient-text">Cindore</span>
                     </h1>
-                    <p class="featured-tagline">겨울 딸기처럼 달콤하고, 피아노 선율처럼 아름다운 이야기</p>
-                    <p class="featured-description">
-                        사계절을 담은 감성 로맨스 소설<br>
-                        <span class="highlight-text">1권 정식 오픈</span>
+                    <p class="hero-subtitle">
+                        프리미엄 소설과 함께하는 애니메이션, 음악까지<br>
+                        Web3 NFT 소유권과 함께 새로운 창작 경험을 시작하세요
                     </p>
-                    <div class="featured-meta">
-                        <span class="meta-item"><i class="fas fa-book-open"></i> 로맨스 / 힐링</span>
-                        <span class="meta-item"><i class="fas fa-music"></i> OST 수록</span>
-                        <span class="meta-item"><i class="fas fa-star"></i> 독점 연재</span>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="showSection('novels')">
+                            <i class="fas fa-book-open"></i> 작품 둘러보기
+                        </button>
+                        <button class="btn-secondary" onclick="showSection('subscription')">
+                            <i class="fas fa-crown"></i> 구독 시작하기
+                        </button>
                     </div>
-                    <div class="featured-buttons">
-                        <button class="btn-featured-primary" onclick="openNovel(100)">
-                            <i class="fas fa-play"></i> 지금 읽기
-                        </button>
-                        <button class="btn-featured-secondary" onclick="showSection('music')">
-                            <i class="fas fa-headphones"></i> OST 듣기
-                        </button>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">1,000+</span>
+                            <span class="stat-label">프리미엄 소설</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">애니메이션</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">OST 트랙</span>
+                        </div>
                     </div>
                 </div>
-                <div class="featured-visual">
-                    <div class="rosa-melsy-art">
-                        <div class="art-frame">
-                            <div class="art-inner">
-                                <div class="petal petal-1"></div>
-                                <div class="petal petal-2"></div>
-                                <div class="petal petal-3"></div>
-                                <div class="snowflake snowflake-1"></div>
-                                <div class="snowflake snowflake-2"></div>
-                                <div class="strawberry"></div>
+                <div class="hero-visual">
+                    <div class="floating-cards">
+                        <div class="card-float card-1">
+                            <div class="card-cover"></div>
+                            <div class="card-info">
+                                <h4>달빛 아래 검의 노래</h4>
+                                <p>판타지 | 연재중</p>
                             </div>
                         </div>
-                        <div class="art-glow"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Secondary Hero -->
-            <div class="hero-secondary">
-                <div class="platform-intro">
-                    <h2 class="intro-title">
-                        상상을 현실로, <span class="gradient-text">Cindore</span>
-                    </h2>
-                    <p class="intro-subtitle">
-                        프리미엄 소설 · 애니메이션 · 음악 · NFT<br>
-                        하나의 IP, 무한한 경험
-                    </p>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">1,000+</span>
-                        <span class="stat-label">프리미엄 소설</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">애니메이션</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">OST 트랙</span>
+                        <div class="card-float card-2">
+                            <div class="card-cover"></div>
+                            <div class="card-info">
+                                <h4>회귀자의 세계정복</h4>
+                                <p>현대판타지 | 완결</p>
+                            </div>
+                        </div>
+                        <div class="card-float card-3">
+                            <div class="card-cover"></div>
+                            <div class="card-info">
+                                <h4>별이 된 소녀</h4>
+                                <p>로맨스 | 연재중</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Features -->
             <div class="features">
-                <div class="feature-card feature-orchid">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-book"></i>
                     </div>
                     <h3>프리미엄 소설</h3>
                     <p>엄선된 프리미엄 소설을 무제한으로 즐기세요</p>
                 </div>
-                <div class="feature-card feature-rose">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-film"></i>
                     </div>
                     <h3>애니메이션</h3>
                     <p>인기 소설의 애니메이션화 콘텐츠</p>
                 </div>
-                <div class="feature-card feature-lavender">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-music"></i>
                     </div>
                     <h3>OST & 음악</h3>
                     <p>작품과 함께하는 오리지널 사운드트랙</p>
                 </div>
-                <div class="feature-card feature-mint">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fab fa-ethereum"></i>
                     </div>

@@ -738,7 +738,7 @@ function renderPlaylist() {
     playlist.innerHTML = musicData.map((track, index) => `
         <div class="track-item ${index === currentTrack ? 'active' : ''}" onclick="selectTrack(${index})" style="animation-delay: ${index * 0.05}s">
             <span class="track-number">${index + 1}</span>
-            <div class="track-thumb" style="background: ${track.gradient}"></div>
+            <div class="track-thumb" style="${track.coverImage ? `background-image: url('${track.coverImage}'); background-size: cover; background-position: center;` : `background: ${track.gradient}`}"></div>
             <div class="track-info">
                 <h4>${track.title}</h4>
                 <p>${track.artist}</p>

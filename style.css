@@ -857,8 +857,20 @@ body {
 }
 
 /* Animation Section */
+.animation-section .section-header {
+    margin-bottom: 20px;
+}
+
+.animation-section .section-header .section-title {
+    margin-bottom: 5px;
+}
+
+.animation-section .section-header .section-subtitle {
+    margin-bottom: 0;
+}
+
 .animation-featured {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .video-player {
@@ -869,7 +881,9 @@ body {
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 50vh;
+    min-height: 300px;
+    max-height: 500px;
     border-radius: 20px;
     overflow: hidden;
     background: #000;
@@ -884,11 +898,12 @@ body {
     object-fit: cover;
     border-radius: 20px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.video-thumbnail:hover {
+.video-wrapper:hover .video-thumbnail {
     transform: scale(1.02);
+    filter: brightness(0.9);
 }
 
 .play-overlay {
@@ -1024,6 +1039,49 @@ body {
 }
 
 /* Animation List */
+.animation-list-wrapper {
+    position: relative;
+}
+
+.animation-list-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--dark) 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.animation-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.animation-list-title {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-size: 0.85rem;
+    animation: bounce-hint 2s ease-in-out infinite;
+}
+
+@keyframes bounce-hint {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
 .animation-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

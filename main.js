@@ -154,7 +154,7 @@ const musicData = [
         artist: '로사멜시(Rosa Melsy) OST',
         duration: '4:13',
         gradient: 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)',
-        audioSrc: '/Winter Strawberry Life_orchestra ver..wav',
+        spotifyId: '3phDz67JfTXoNwTwRPT5UX',
         isNew: true
     },
     {
@@ -890,6 +890,16 @@ function updatePlayerDisplay() {
     document.getElementById('trackArtist').textContent = track.artist;
     document.getElementById('albumArt').style.background = track.gradient;
     document.getElementById('totalTime').textContent = track.duration;
+
+    // Spotify 임베드 업데이트
+    const spotifyEmbed = document.getElementById('spotifyEmbed');
+    const spotifyPlayer = document.getElementById('spotifyPlayer');
+    if (track.spotifyId) {
+        spotifyPlayer.src = `https://open.spotify.com/embed/track/${track.spotifyId}?utm_source=generator&theme=0`;
+        spotifyEmbed.style.display = 'block';
+    } else {
+        spotifyEmbed.style.display = 'none';
+    }
 }
 
 // ==================== NFTs ====================

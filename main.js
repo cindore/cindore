@@ -698,10 +698,6 @@ function updateMainPlayer(anim) {
                 allowfullscreen
                 style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border-radius: 20px;">
             </iframe>
-            <div class="video-info" style="position: absolute; bottom: 20px; left: 20px; z-index: 10;">
-                <span class="video-badge">NEW</span>
-                <h3>${anim.title} - ${anim.episode}</h3>
-            </div>
         `;
     } else {
         videoPlayer.innerHTML = `

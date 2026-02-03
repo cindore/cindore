@@ -733,9 +733,11 @@ function playAnimation(id) {
 function renderPlaylist() {
     const playlist = document.getElementById('playlist');
     playlist.innerHTML = musicData.map((track, index) => `
-        <div class="track-item ${index === currentTrack ? 'active' : ''}" onclick="selectTrack(${index})" style="animation-delay: ${index * 0.05}s">
+        <div class="track-item ${index === currentTrack ? 'active' : ''} ${track.isNew ? 'new-track' : ''}" onclick="selectTrack(${index})" style="animation-delay: ${index * 0.05}s">
             <span class="track-number">${index + 1}</span>
-            <div class="track-thumb" style="background: ${track.gradient}"></div>
+            <div class="track-thumb" style="background: ${track.gradient}">
+                ${track.isNew ? '<span class="track-badge">NEW</span>' : ''}
+            </div>
             <div class="track-info">
                 <h4>${track.title}</h4>
                 <p>${track.artist}</p>

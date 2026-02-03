@@ -1169,6 +1169,28 @@ body {
     height: 50px;
     background: var(--gradient);
     border-radius: 10px;
+    position: relative;
+}
+
+.track-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--accent);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+.new-track {
+    border-color: var(--accent);
+    background: rgba(253, 121, 168, 0.1);
+}
+
+.new-track:hover {
+    background: rgba(253, 121, 168, 0.2);
 }
 
 .track-info {

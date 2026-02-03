@@ -150,55 +150,64 @@ const animationsData = [
 const musicData = [
     {
         id: 1,
+        title: 'Winter Strawberry Life',
+        artist: 'LOVER (2024) OST',
+        duration: '3:30',
+        gradient: 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)',
+        audioSrc: '/Winter Strawberry Life_orchestra ver..wav',
+        isNew: true
+    },
+    {
+        id: 2,
         title: 'Moonlight Blade',
         artist: '달빛 아래 검의 노래 OST',
         duration: '3:45',
         gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
     },
     {
-        id: 2,
+        id: 3,
         title: 'Return of the Hero',
         artist: '회귀자의 세계정복 OST',
         duration: '4:12',
         gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
     },
     {
-        id: 3,
+        id: 4,
         title: 'Starlight Dreams',
         artist: '별이 된 소녀 OST',
         duration: '3:28',
         gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
     },
     {
-        id: 4,
+        id: 5,
         title: 'Dungeon Master',
         artist: '던전의 지배자 OST',
         duration: '4:05',
         gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
     },
     {
-        id: 5,
+        id: 6,
         title: 'Shadow Detective',
         artist: '그림자 탐정사무소 OST',
         duration: '3:52',
         gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
     },
     {
-        id: 6,
+        id: 7,
         title: 'Magic Academy',
         artist: '마법학교의 낙오생 OST',
         duration: '3:38',
         gradient: 'linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)'
     },
     {
-        id: 7,
+        id: 8,
         title: 'Golden Dreams',
         artist: '재벌가의 막내아들 OST',
         duration: '4:20',
         gradient: 'linear-gradient(135deg, #c3cfe2 0%, #f5f7fa 100%)'
     },
     {
-        id: 8,
+        id: 9,
         title: 'Martial Arts Legend',
         artist: '무림의 절대고수 OST',
         duration: '3:55',
@@ -247,6 +256,7 @@ let isPlaying = false;
 let selectedPlan = null;
 let bgMusicPlaying = false;
 let bgAudio = null;
+let trackAudio = null;
 
 const planPrices = {
     basic: { web2: '9,900원/월', web3: '0.005 ETH/월' },
@@ -761,15 +771,43 @@ function togglePlay() {
     isPlaying = !isPlaying;
     const playBtn = document.getElementById('playBtn');
     const albumArt = document.getElementById('albumArt');
+    const track = musicData[currentTrack];
 
     playBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
 
     if (isPlaying) {
         albumArt.classList.add('playing');
-        simulatePlayback();
+
+        // 실제 오디오 파일이 있는 경우 재생
+        if (track.audioSrc) {
+            if (!trackAudio || trackAudio.src !== window.location.origin + track.audioSrc) {
+                if (trackAudio) trackAudio.pause();
+                trackAudio = new Audio(track.audioSrc);
+                trackAudio.volume = 0.7;
+                trackAudio.addEventListener('timeupdate', updateProgress);
+                trackAudio.addEventListener('ended', nextTrack);
+            }
+            trackAudio.play().catch(err => console.log('Audio play error:', err));
+        } else {
+            simulatePlayback();
+        }
     } else {
         albumArt.classList.remove('playing');
+        if (trackAudio) trackAudio.pause();
     }
+}
+
+function updateProgress() {
+    if (!trackAudio) return;
+    const progress = document.getElementById('progress');
+    const percent = (trackAudio.currentTime / trackAudio.duration) * 100;
+    progress.style.width = percent + '%';
+
+    // Update time display
+    const currentMins = Math.floor(trackAudio.currentTime / 60);
+    const currentSecs = Math.floor(trackAudio.currentTime % 60);
+    document.getElementById('currentTime').textContent =
+        `${currentMins}:${currentSecs.toString().padStart(2, '0')}`;
 }
 
 function simulatePlayback() {
@@ -799,25 +837,46 @@ function simulatePlayback() {
 }
 
 function selectTrack(index) {
+    if (trackAudio) {
+        trackAudio.pause();
+        trackAudio = null;
+    }
     currentTrack = index;
     document.getElementById('progress').style.width = '0%';
     document.getElementById('currentTime').textContent = '0:00';
     updatePlayerDisplay();
     renderPlaylist();
 
-    if (!isPlaying) {
+    if (isPlaying) {
+        isPlaying = false;
+        togglePlay();
+    } else {
         togglePlay();
     }
 }
 
 function prevTrack() {
+    if (trackAudio) {
+        trackAudio.pause();
+        trackAudio = null;
+    }
     currentTrack = (currentTrack - 1 + musicData.length) % musicData.length;
     document.getElementById('progress').style.width = '0%';
+    document.getElementById('currentTime').textContent = '0:00';
     updatePlayerDisplay();
     renderPlaylist();
+
+    if (isPlaying) {
+        isPlaying = false;
+        togglePlay();
+    }
 }
 
 function nextTrack() {
+    if (trackAudio) {
+        trackAudio.pause();
+        trackAudio = null;
+    }
     currentTrack = (currentTrack + 1) % musicData.length;
     document.getElementById('progress').style.width = '0%';
     document.getElementById('currentTime').textContent = '0:00';
@@ -825,7 +884,8 @@ function nextTrack() {
     renderPlaylist();
 
     if (isPlaying) {
-        simulatePlayback();
+        isPlaying = false;
+        togglePlay();
     }
 }
 

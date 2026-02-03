@@ -732,51 +732,41 @@ function playAnimation(id) {
 
 // ==================== Music Player ====================
 function renderPlaylist() {
-    const trackList = document.getElementById('trackList');
-    if (!trackList) return;
+    const playlist = document.getElementById('playlist');
+    if (!playlist) return;
 
-    trackList.innerHTML = musicData.map((track, index) => `
-        <div class="track-item ${index === currentTrack ? 'active' : ''}" onclick="selectTrack(${index})">
-            <img src="${track.coverImage || ''}" alt="${track.title}" class="track-thumb" style="${!track.coverImage ? `background: ${track.gradient}` : ''}">
+    playlist.innerHTML = musicData.map((track, index) => `
+        <div class="track-item ${index === currentTrack ? 'active' : ''}" onclick="selectTrack(${index})" style="animation-delay: ${index * 0.05}s">
+            <span class="track-number">${index + 1}</span>
+            <div class="track-thumb" style="background: ${track.gradient}"></div>
             <div class="track-info">
                 <h4>${track.title}</h4>
                 <p>${track.artist}</p>
             </div>
-            ${track.isNew ? '<span class="track-badge">NEW</span>' : ''}
             <span class="track-duration">${track.duration}</span>
         </div>
     `).join('');
 }
 
-function updateMainPlayer(track) {
-    const mainCoverImg = document.getElementById('mainCoverImg');
-    const mainTitle = document.getElementById('mainTitle');
-    const mainSubtitle = document.getElementById('mainSubtitle');
-    const spotifyIframe = document.getElementById('spotifyIframe');
-    const spotifyOpenBtn = document.getElementById('spotifyOpenBtn');
-
-    if (mainCoverImg && track.coverImage) {
-        mainCoverImg.src = track.coverImage;
-    }
-    if (mainTitle) {
-        mainTitle.textContent = track.title;
-    }
-    if (mainSubtitle) {
-        mainSubtitle.textContent = track.artist;
-    }
-    if (spotifyIframe && track.spotifyId) {
-        spotifyIframe.src = `https://open.spotify.com/embed/track/${track.spotifyId}?utm_source=generator&theme=0`;
-    }
-    if (spotifyOpenBtn && track.spotifyId) {
-        spotifyOpenBtn.href = `https://open.spotify.com/track/${track.spotifyId}`;
-    }
-}
-
 function initMusicPlayer() {
-    // Initialize with first track
-    if (musicData.length > 0) {
-        updateMainPlayer(musicData[0]);
+    const playBtn = document.getElementById('playBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const progressBar = document.querySelector('.progress-bar');
+
+    if (playBtn) playBtn.addEventListener('click', togglePlay);
+    if (prevBtn) prevBtn.addEventListener('click', prevTrack);
+    if (nextBtn) nextBtn.addEventListener('click', nextTrack);
+
+    if (progressBar) {
+        progressBar.addEventListener('click', (e) => {
+            const rect = e.target.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width * 100;
+            document.getElementById('progress').style.width = percent + '%';
+        });
     }
+
+    updatePlayerDisplay();
 }
 
 function togglePlay() {
@@ -850,16 +840,13 @@ function simulatePlayback() {
 
 function selectTrack(index) {
     currentTrack = index;
-    const track = musicData[index];
-
-    // Update main player with selected track
-    updateMainPlayer(track);
+    document.getElementById('progress').style.width = '0%';
+    document.getElementById('currentTime').textContent = '0:00';
+    updatePlayerDisplay();
     renderPlaylist();
 
-    // Scroll to main player
-    const mainPlayer = document.getElementById('mainPlayer');
-    if (mainPlayer) {
-        mainPlayer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!isPlaying) {
+        togglePlay();
     }
 }
 

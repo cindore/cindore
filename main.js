@@ -96,41 +96,50 @@ const novelsData = [
 const animationsData = [
     {
         id: 1,
+        title: 'Cindore 오리지널',
+        episode: '신규 애니메이션 예고편',
+        duration: '3:30',
+        gradient: 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)',
+        youtubeId: 'nHPXmV8SZTw',
+        isNew: true
+    },
+    {
+        id: 2,
         title: '달빛 아래 검의 노래',
         episode: 'EP.1 - 운명의 시작',
         duration: '24:30',
         gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
     },
     {
-        id: 2,
+        id: 3,
         title: '달빛 아래 검의 노래',
         episode: 'EP.2 - 첫 번째 시련',
         duration: '23:45',
         gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
     },
     {
-        id: 3,
+        id: 4,
         title: '회귀자의 세계정복',
         episode: 'EP.1 - 돌아온 자',
         duration: '25:00',
         gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
     },
     {
-        id: 4,
+        id: 5,
         title: '회귀자의 세계정복',
         episode: 'EP.2 - 새로운 시작',
         duration: '24:15',
         gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
     },
     {
-        id: 5,
+        id: 6,
         title: '별이 된 소녀',
         episode: 'EP.1 - 별빛 아래서',
         duration: '22:30',
         gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
     },
     {
-        id: 6,
+        id: 7,
         title: '던전의 지배자',
         episode: 'EP.1 - 각성',
         duration: '24:00',
@@ -659,8 +668,10 @@ function generateSampleContent(novel) {
 function renderAnimations() {
     const list = document.getElementById('animationList');
     list.innerHTML = animationsData.map((anim, index) => `
-        <div class="animation-item" onclick="playAnimation(${anim.id})" style="animation-delay: ${index * 0.1}s">
-            <div class="animation-thumb" style="background: ${anim.gradient}"></div>
+        <div class="animation-item ${anim.isNew ? 'new-animation' : ''}" onclick="playAnimation(${anim.id})" style="animation-delay: ${index * 0.1}s">
+            <div class="animation-thumb" style="${anim.youtubeId ? `background-image: url('https://img.youtube.com/vi/${anim.youtubeId}/mqdefault.jpg'); background-size: cover; background-position: center;` : `background: ${anim.gradient}`}">
+                ${anim.isNew ? '<span class="thumb-badge">NEW</span>' : ''}
+            </div>
             <div class="animation-details">
                 <h4>${anim.title}</h4>
                 <p>${anim.episode}</p>
@@ -668,10 +679,55 @@ function renderAnimations() {
             </div>
         </div>
     `).join('');
+
+    // 첫 번째 애니메이션(YouTube 영상)을 메인 플레이어에 로드
+    const firstAnim = animationsData[0];
+    if (firstAnim && firstAnim.youtubeId) {
+        updateMainPlayer(firstAnim);
+    }
+}
+
+function updateMainPlayer(anim) {
+    const videoPlayer = document.getElementById('videoPlayer');
+    if (anim.youtubeId) {
+        videoPlayer.innerHTML = `
+            <iframe
+                src="https://www.youtube.com/embed/${anim.youtubeId}?rel=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border-radius: 20px;">
+            </iframe>
+            <div class="video-info" style="position: absolute; bottom: 20px; left: 20px; z-index: 10;">
+                <span class="video-badge">NEW</span>
+                <h3>${anim.title} - ${anim.episode}</h3>
+            </div>
+        `;
+    } else {
+        videoPlayer.innerHTML = `
+            <div class="play-button" onclick="playAnimation(${anim.id})">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="video-info">
+                <span class="video-badge">${anim.isNew ? 'NEW' : ''}</span>
+                <h3>${anim.title} ${anim.episode}</h3>
+            </div>
+        `;
+    }
 }
 
 function playAnimation(id) {
-    showToast('애니메이션을 재생합니다 (구독 필요)');
+    const anim = animationsData.find(a => a.id === id);
+    if (!anim) return;
+
+    if (anim.youtubeId) {
+        updateMainPlayer(anim);
+        // 애니메이션 섹션으로 스크롤
+        document.querySelector('.animation-featured').scrollIntoView({ behavior: 'smooth' });
+        showToast(`"${anim.title}" 재생 중`);
+    } else {
+        showToast('애니메이션을 재생합니다 (구독 필요)');
+    }
 }
 
 // ==================== Music Player ====================

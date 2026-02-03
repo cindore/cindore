@@ -982,6 +982,28 @@ body {
     opacity: 1;
 }
 
+.thumb-badge {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: var(--accent);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.new-animation {
+    border-color: var(--accent);
+    background: rgba(253, 121, 168, 0.1);
+}
+
+.new-animation:hover {
+    background: rgba(253, 121, 168, 0.2);
+}
+
 .animation-details h4 {
     font-size: 1rem;
     margin-bottom: 5px;

@@ -268,7 +268,6 @@ const planPrices = {
 
 // ==================== Initialization ====================
 document.addEventListener('DOMContentLoaded', () => {
-    initCursorGlow();
     initParticles();
     initHoverEffects();
     initNavigation();
@@ -295,67 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('loaded');
     }, 100);
 });
-
-// ==================== Cursor Effects ====================
-function initCursorGlow() {
-    const cursorGlow = document.getElementById('cursorGlow');
-    const cursorRing = document.getElementById('cursorRing');
-    if (!cursorGlow || !cursorRing) return;
-
-    // Hide on touch devices
-    if ('ontouchstart' in window) {
-        cursorGlow.style.display = 'none';
-        cursorRing.style.display = 'none';
-        return;
-    }
-
-    let glowX = 0, glowY = 0;
-    let ringX = 0, ringY = 0;
-    let targetX = 0, targetY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        targetX = e.clientX;
-        targetY = e.clientY;
-    });
-
-    // Smooth animation - glow follows faster, ring follows slower
-    function animate() {
-        glowX += (targetX - glowX) * 0.2;
-        glowY += (targetY - glowY) * 0.2;
-        cursorGlow.style.left = glowX + 'px';
-        cursorGlow.style.top = glowY + 'px';
-
-        ringX += (targetX - ringX) * 0.1;
-        ringY += (targetY - ringY) * 0.1;
-        cursorRing.style.left = ringX + 'px';
-        cursorRing.style.top = ringY + 'px';
-
-        requestAnimationFrame(animate);
-    }
-    animate();
-
-    // Hover effect on interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .novel-card, .plan-card, .nft-card, .track-item, .animation-item, input, .filter-btn, .spotify-player-wrapper');
-
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorGlow.classList.add('hover');
-            cursorRing.classList.add('hover');
-        });
-        el.addEventListener('mouseleave', () => {
-            cursorGlow.classList.remove('hover');
-            cursorRing.classList.remove('hover');
-        });
-    });
-
-    // Click effect
-    document.addEventListener('mousedown', () => {
-        cursorGlow.classList.add('click');
-    });
-    document.addEventListener('mouseup', () => {
-        cursorGlow.classList.remove('click');
-    });
-}
 
 // ==================== Hover Effects ====================
 function initHoverEffects() {
